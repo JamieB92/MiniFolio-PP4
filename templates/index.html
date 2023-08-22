@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 >{{ userPosts.header }}</h2>
+    <div>
+        {% for uploads in UploadList %}
+        <img src="{{ userPosts.post_image }}">
+        <p>Creator: {{ userPosts.creator }}</p>
+        <p >{{ userPosts.caption }}</p>
+        <p >{{ userPosts.posted_on}} <i class="fa-solid fa-star"></i> {{ userPosts.total_super_vote }} <i class="fa-regular fa-circle-up"></i> {{ userPosts.total_up_votes }} <i class="fa-regular fa-circle-down"></i> {{ userPosts.total_down_vote }}</p>
+    {% if forloop.counter|divisibleby:3 %}
+    </div>
+    {% endif %}
+    {% endfor %}
+
+{%endblock%}
