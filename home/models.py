@@ -18,22 +18,23 @@ class userPosts(models.Model):
     down_vote = models.ManyToManyField(
         User, related_name='post_down_votes', blank=True)
 
+    class Meta:
+        ordering = ["-posted_on"]
+        verbose_name_plural = "User Posts"
 
-def __str__(self):
-    return self.header
+    def __str__(self):
+        return self.header
 
+    # Counts for Super, Up and Down Votes
 
-# Counts for Super, Up and Down Votes
-def total_up_votes(self):
-    return self.up_vote.count
+    def total_up_votes(self):
+        return self.up_vote.count()
 
+    def total_super_vote(self):
+        return self.super_vote.count()
 
-def total_super_vote(self):
-    return self.super_vote.count
-
-
-def total_down_vote(self):
-    return self.down_vote.count
+    def total_down_vote(self):
+        return self.down_vote.count()
 
 # DB Model for posts comments
 
@@ -47,6 +48,7 @@ class postComments(models.Model):
 
     class Meta:
         ordering = ["created_on"]
+        verbose_name_plural = "Post Comments"
 
     def __str__(self):
         return f"Comment {self.comment_body} by {self.name}"
