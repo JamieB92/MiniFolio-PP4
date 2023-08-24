@@ -3,19 +3,32 @@
 {% block content %}
 
 
+<!-- Blog Entries Column -->
+{% for post in object_list %}
 <div class="container">
-    {% for post in object_list %}
+<div class="row">
+    <div class="col s12 m7">
+        <div class="card">
+            <div class="card-title">{{ post.header }}</div>
+            <div class="card-image">
+                {% cloudinary post.post_image %}
+            </div>
+            <div class="card-action">
+                <span>{{ post.creator }}</span> <span>{{ post.posted_on}}</span>
+                <span><i class="fa-solid fa-star"></i></span> <span>{{ post.total_super_vote }}</span> <span><i
+                        class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}</span> <span><i
+                        class="fa-regular fa-circle-down"></i>
+                    {{post.total_down_vote }}</span>
+            </div>
+            <div class="card-content">
+                <p>{{ post.caption }}</p>
+            </div>
+        </div>
+    </div>
+ {% endfor %}
 
-    <h2>{{ post.header }}</h2>
-    {% cloudinary post.post_image %}
-
-    <p>Creator: {{ post.creator }}</p>
-    {{ post.caption }}
-    <p>{{ post.posted_on}} <i class="fa-solid fa-star"></i> {{ post.total_super_vote }} <i
-            class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }} <i class="fa-regular fa-circle-down"></i> 
-            {{post.total_down_vote }}</p>
-
-    {% endfor %}
 </div>
+</div>
+
 
 {%endblock%}
