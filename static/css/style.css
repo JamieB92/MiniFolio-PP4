@@ -5,32 +5,3 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-
-main {
-    flex: 1 0 auto;
-}
-
-.font,
-.material-icons,
-.footer-copyright,
-.material-symbols-outlined {
-    color: rgb(51, 51, 51);
-}
-
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 1,
-        'wght' 600,
-        'GRAD' 200,
-        'opsz' 48
-}
-
-/* Navbar and Footer */
-
-.navbar,
-.page-footer {
-    background-color: rgb(0, 150, 136);
-}
-
-
-/* Home page */
