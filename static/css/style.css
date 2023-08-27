@@ -209,6 +209,10 @@ button {
 
 }
 
+.reasons {
+    list-style: none;
+}
+
 /*    Media Querys       */
 
 /*     Small screen    */
