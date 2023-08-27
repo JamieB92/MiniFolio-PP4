@@ -66,12 +66,20 @@ button {
 
 /* Landing Page                   */
 
+.title-container {
+    border-style: solid;
+    border-color: rgb(51, 51, 51);
+}
 
+.logo {
+    margin-top: 30px;
+}
 
-/* 
 .title-quote {
-    padding-bottom: 500px;
-} */
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
 
 .one {
     background-color: blue;
