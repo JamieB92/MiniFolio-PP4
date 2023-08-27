@@ -17,12 +17,16 @@ main {
     padding-bottom: 100px;
 }
 
+.flex-ct {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-
-.content-container {
+.content {
     background-color: rgb(35, 35, 35);
     border-style: solid;
     border-color: rgb(51, 51, 51);
+    margin: 10px;
 }
 
 /* Buttons */
@@ -57,7 +61,6 @@ button {
     width: 2.5em;
     height: 2em;
     margin: 20px;
-    text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 35px;
     font-weight: 800;
@@ -71,7 +74,6 @@ button {
     transition: color .2s linear,
         box-shadow .3s linear,
         background-color .3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 }
 
 .postbtn:focus,
@@ -125,6 +127,7 @@ button {
 
 
 /* Navbar and Footer                  */
+
 .navbar,
 .footer {
     background-color: rgb(18, 18, 18);
@@ -161,6 +164,7 @@ button {
 .title-container {
     border-style: solid;
     border-color: rgb(51, 51, 51);
+    margin-bottom: 50px;
 }
 
 .logo {
@@ -173,14 +177,20 @@ button {
 }
 
 
-.one {
-    background-color: blue;
+
+.landing-flex-ct {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.two {
-    background-color: yellow;
-}
+.about {
+    width: 75%;
+    text-align: center;
 
+}
 
 /* Media Querys */
 
@@ -195,5 +205,11 @@ button {
 
     .postbtn {
         margin: 10px;
+    }
+
+    /* Landing */
+
+    .about {
+        width: 85%;
     }
 }
