@@ -25,7 +25,7 @@ main {
     border-color: rgb(51, 51, 51);
 }
 
-/* Global Buttons */
+/* Buttons */
 
 button {
     all: unset;
@@ -52,6 +52,30 @@ button {
         background-color .3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.postbtn {
+    position: relative;
+    width: 2.5em;
+    height: 2em;
+    margin: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgb(18, 18, 18);
+    cursor: pointer;
+    background-color: rgb(224, 224, 224);
+    border-radius: 50%;
+    border: none;
+    transition: color .2s linear,
+        box-shadow .3s linear,
+        background-color .3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.postbtn:focus,
+.postbtn:hover,
 .button:focus,
 .button:hover {
     box-shadow: 0 0 110px rgb(240, 153, 51);
@@ -60,6 +84,10 @@ button {
     font-weight: 500;
 }
 
+.postbtn:focus:before,
+.postbtn:hover:before,
+.postbtn:focus:after,
+.postbtn:hover:after,
 .button:focus:before,
 .button:hover:before,
 .button:focus:after,
@@ -68,6 +96,8 @@ button {
     left: 0%;
 }
 
+.postbtn:before,
+.postbtn:after,
 .button:before,
 .button:after {
     content: '';
@@ -80,13 +110,19 @@ button {
     transition: width, left, 250ms cubic-bezier(0.25, .8, .25, 1);
 }
 
+.postbtn:before,
 .button:before {
     top: -2px;
 }
 
+.postbtn:after,
 .button:after {
     bottom: -2px;
 }
+
+
+
+
 
 /* Navbar and Footer                  */
 .navbar,
@@ -110,11 +146,6 @@ button {
     background-color: rgb(224, 224, 224)
 }
 
-.postbtn {
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-}
 
 .qoute {
     padding-left: 15px;
