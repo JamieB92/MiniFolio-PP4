@@ -176,7 +176,28 @@ button {
     padding-bottom: 30px;
 }
 
+.carousel {
+    width: 50%;
+    margin-top: 30px;
+}
 
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    border-radius: 100%;
+    color: black;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(240, 153, 51, 0.5);
+    color: rgb(224, 224, 224);
+}
+
+.carousel-caption {
+    background-color: rgba(35, 35, 35, 0.5);
+    border-radius: 30px;
+}
 
 .landing-flex-ct {
     margin-top: 50px;
@@ -192,12 +213,12 @@ button {
 
 }
 
-/* Media Querys */
+/*    Media Querys       */
 
-/* Small screen */
+/*     Small screen    */
 @media screen and (max-width:576px) {
 
-    /* Footer  */
+    /*    Footer        */
     .qoute,
     .copyright {
         display: none;
@@ -207,9 +228,13 @@ button {
         margin: 10px;
     }
 
-    /* Landing */
+    /*    Landing      */
 
     .about {
         width: 85%;
+    }
+
+    .carousel {
+        width: 75%;
     }
 }
