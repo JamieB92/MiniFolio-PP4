@@ -58,19 +58,15 @@ button {
 
 .postbtn {
     position: relative;
-    width: 2.5em;
-    height: 2em;
-    margin: 20px;
+    width: 2em;
+    height: 1.5em;
     font-family: 'Roboto', sans-serif;
     font-size: 35px;
     font-weight: 800;
-    letter-spacing: 5px;
-    text-transform: uppercase;
     color: rgb(18, 18, 18);
     cursor: pointer;
     background-color: rgb(224, 224, 224);
-    border-radius: 50%;
-    border: none;
+    border-radius: 30px;
     transition: color .2s linear,
         box-shadow .3s linear,
         background-color .3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -124,8 +120,6 @@ button {
 
 
 
-
-
 /* Navbar and Footer                  */
 
 .navbar,
@@ -133,6 +127,7 @@ button {
     background-color: rgb(18, 18, 18);
     color: rgb(224, 224, 224);
 }
+
 
 .nav-link,
 .navbar-brand {
@@ -177,8 +172,9 @@ button {
 }
 
 .carousel {
-    width: 50%;
+    width: 55%;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 
