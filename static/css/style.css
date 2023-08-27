@@ -1,8 +1,8 @@
 /* Global */
 
 body {
-    background-color: rgb(204, 204, 204);
-    color: rgb(51, 51, 51);
+    background-color: rgb(26, 26, 26);
+    color: rgb(224, 224, 224);
 }
 
 main {
@@ -14,23 +14,32 @@ button {
     all: unset;
 }
 
+.content-container {
+    background-color: rgb(35, 35, 35);
+    border-style: solid;
+    border-color: rgb(51, 51, 51);
+}
 
 /* Navbar and Footer */
 .navbar,
 .footer {
-    background-color: rgb(0, 150, 136);
-    color: rgb(51, 51, 51);
+    background-color: rgb(18, 18, 18);
+    color: rgb(224, 224, 224);
 }
 
 .nav-link,
 .navbar-brand {
-    color: rgb(51, 51, 51);
+    color: rgb(235, 240, 240);
 }
 
 .navbar-brand:hover,
 .nav-link:hover,
 .navbar-toggler {
-    color: rgb(204, 204, 204);
+    color: rgb(240, 153, 51);
+}
+
+.navbar-toggler {
+    background-color: rgb(224, 224, 224)
 }
 
 .postbtn {
@@ -46,6 +55,22 @@ button {
 .copyright {
     padding-right: 15px;
 }
+
+
+/* Landing Page */
+
+.container-xl {
+    background-color: red;
+}
+
+.one {
+    background-color: blue;
+}
+
+.two {
+    background-color: yellow;
+}
+
 
 /* Media Querys */
 
