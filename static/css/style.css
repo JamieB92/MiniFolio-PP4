@@ -3,6 +3,13 @@
 body {
     background-color: rgb(26, 26, 26);
     color: rgb(224, 224, 224);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
 }
 
 main {
@@ -20,7 +27,7 @@ button {
     border-color: rgb(51, 51, 51);
 }
 
-/* Navbar and Footer */
+/* Navbar and Footer                  */
 .navbar,
 .footer {
     background-color: rgb(18, 18, 18);
@@ -57,11 +64,14 @@ button {
 }
 
 
-/* Landing Page */
+/* Landing Page                   */
 
-.container-xl {
-    background-color: red;
-}
+
+
+/* 
+.title-quote {
+    padding-bottom: 500px;
+} */
 
 .one {
     background-color: blue;
