@@ -251,10 +251,22 @@ button a:hover {
     text-align: center;
 }
 
-/* Login */
+/* inputs & labels */
+
+.signup label,
+.login label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+
 
 #id_password,
-#id_login {
+#id_login,
+#id_username,
+#id_email,
+#id_password1,
+#id_password2 {
     border: none;
     border-radius: 15px;
     padding: 5px;
@@ -266,7 +278,11 @@ button a:hover {
 }
 
 #id_login:focus,
-#id_password:focus {
+#id_password:focus,
+#id_username:focus,
+#id_email:focus,
+#id_password1:focus,
+#id_password2:focus {
     outline-color: rgb(240, 153, 51);
 }
 
