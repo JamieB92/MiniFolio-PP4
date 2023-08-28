@@ -12,6 +12,15 @@ h3 {
     font-family: 'Playfair Display', serif;
 }
 
+a {
+    color: rgb(240, 153, 51);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(224, 224, 224);
+    text-decoration: underline;
+}
 
 main {
     padding-top: 75px;
@@ -223,6 +232,57 @@ button a:hover {
 .reasons {
     list-style: none;
 }
+
+/* Allauth pages            */
+.allauth-flex-ct {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.allauth-content {
+    background-color: rgb(35, 35, 35);
+    border-style: solid;
+    border-color: rgb(51, 51, 51);
+    margin: 10px;
+    padding: 25px 100px 25px 100px;
+    text-align: center;
+}
+
+/* Login */
+
+#id_password,
+#id_login {
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    color: rgb(26, 26, 26);
+    background-color: rgb(224, 224, 224);
+    font-size: medium;
+    font-weight: bold;
+    max-width: 200px;
+}
+
+#id_login:focus,
+#id_password:focus {
+    outline-color: rgb(240, 153, 51);
+}
+
+#id_remember {
+    accent-color: rgb(240, 153, 51);
+}
+
+/* Log Out */
+
+
+
+
+
+
+
+
 
 /*    Media Querys       */
 
