@@ -30,9 +30,11 @@ main {
 .flex-ct {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .content {
+    text-align: center;
     background-color: rgb(35, 35, 35);
     border-style: solid;
     border-color: rgb(51, 51, 51);
@@ -290,12 +292,10 @@ button a:hover {
     accent-color: rgb(240, 153, 51);
 }
 
-/* Log Out */
 
 
 
-
-
+/* Home Page */
 
 
 

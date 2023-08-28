@@ -6,26 +6,49 @@
 <!-- Blog Entries Column -->
 
 {% for post in object_list %}
-        <div class="card">
-            <div class="card-title">
-                {{ post.header }}
-            </div>
-            <div class="card-image">
-                {% cloudinary post.post_image %}
-            </div>
-            <div class="card-action">
-                <span>{{ post.creator }}</span> <span>{{ post.posted_on}}</span>
-                <span><i class="fa-solid fa-star"></i></span> <span>{{ post.total_super_vote }}</span> <span><i
-                        class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}</span> <span><i
-                        class="fa-regular fa-circle-down"></i>
-                    {{post.total_down_vote }}</span>
-            </div>
-            <div class="card-content">
-                <p>{{ post.caption }}</p>
-            </div>
-        </div>
-        <div>
-            {% endfor %}
-        </div>
 
-{%endblock%}
+<div class="flex-ct">
+    <div class="content">
+
+
+    <div>
+         <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
+    </div>
+    <div>
+        <img src="{{ post.post_image.url }}" class="" alt="...">
+    </div>    
+    <div>
+        <span>
+        <i class="fa-solid fa-star"></i>{{ post.total_super_vote }}
+        <i class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}
+        <i class="fa-regular fa-circle-down"></i>{{post.total_down_vote }}
+        </span>
+    </div>
+    <div>
+        {{ post.header }}
+    </div>
+    <div>
+        {{ post.caption }}
+    </div>
+    <div>
+        <p class="d-inline-flex gap-1">
+            <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Show Comments
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <div>
+                    {{post.post_comments}}
+                    <span>{{ post.name }}</span><span>{{ post.created_on }}</span>
+                </div>
+                <div>{{ post.comment_body }}</div>
+            </div>
+    </div>
+</div>
+</div>
+</div>
+    {% endfor %}
+
+
+    {%endblock%}
