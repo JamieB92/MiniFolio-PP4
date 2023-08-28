@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-jamieb92-minifolio-pp4-cpr3j8wvo6.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-jamieb92-minifolio-pp4-u1uugib5fn.us2.codeanyapp.com',
                  'minifolioapp-b0e53ffaa426.herokuapp.com']
 
 
@@ -44,13 +44,25 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'home',
     'userprofile',
     'django_summernote',
 ]
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = 'home/'
+LOGOUT_REDIRECT_URL = '/'
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
