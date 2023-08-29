@@ -5,52 +5,54 @@
 
 <!-- Blog Entries Column -->
 
-{% for post in posts %}
 
+
+    {% for post in post %}
 <div class="flex-ct">
     <div class="content">
+        <div>
+            <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
+        </div>
+        <div>
+            <img src="{{ post.post_image.url }}" class="" alt="...">
+        </div>
+        <div>
+            <span>
+                <i class="fa-solid fa-star"></i>{{ post.total_super_vote }}
+                <i class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}
+                <i class="fa-regular fa-circle-down"></i>{{post.total_down_vote }}
+            </span>
+        </div>
+        <div>
+            {{ post.header }}
+        </div>
+        <div>
+            {{ post.caption }}
 
+        </div>
 
-    <div>
-         <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
-    </div>
-    <div>
-        <img src="{{ post.post_image.url }}" class="" alt="...">
-    </div>    
-    <div>
-        <span>
-        <i class="fa-solid fa-star"></i>{{ post.total_super_vote }}
-        <i class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}
-        <i class="fa-regular fa-circle-down"></i>{{post.total_down_vote }}
-        </span>
-    </div>
-    <div>
-        {{ post.header }}
-    </div>
-    <div>
-        {{ post.caption }}
-    </div>
-    <div>
-        <p class="d-inline-flex gap-1">
-            <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Show Comments
-            </a>
-        </p>
-        <div class="collapse" id="collapseExample">
-            {% for comment in comments %}
-            <div class="card card-body">
-                <div>
-                    {{comment.post_comments}}
-                    <span>{{ comment.name }}</span><span>{{ comment.created_on }}</span>
+        <div>
+
+            <p class="d-inline-flex gap-1">
+                {% for comment in comments %}
+                <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    Show Comments
+                </a>
+            </p>
+
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <div>
+                        <span>{{ comment.name }}</span><span>{{ comment.created_on }}</span>
+                    </div>
+                    <div>{{ comment.comment_body }}</div>
                 </div>
-                <div>{{ comment.comment_body }}</div>
+                {% endfor %}
             </div>
-            {% endfor %}
+        </div>
     </div>
 </div>
-</div>
-</div>
-    {% endfor %}
+{% endfor %}
 
-
-    {%endblock%}
+{%endblock%}

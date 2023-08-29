@@ -9,12 +9,14 @@ class LandingPage(View):
         return render(request, "index.html")
 
 
-class UploadList(generic.ListView):
+class UploadList(View):
     def get(self, request):
-        comments = postComments.objects.all()
-        posts = userPosts.objects.all()
-        context = {
-            'comments': comments,
-            'posts': posts
-        }
-        return render(request, 'home.html', context)
+        post = userPosts.objects.order_by("-posted_on")
+        comments = postComments.objects.order_by("-created_on")
+        return render(
+            request, "home.html",
+            {
+                "post": post,
+                "comments": comments
+            }
+        )
