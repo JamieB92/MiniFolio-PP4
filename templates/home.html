@@ -5,7 +5,7 @@
 
 <!-- Blog Entries Column -->
 
-{% for post in object_list %}
+{% for post in posts %}
 
 <div class="flex-ct">
     <div class="content">
@@ -37,13 +37,15 @@
             </a>
         </p>
         <div class="collapse" id="collapseExample">
+            {% for comment in comments %}
             <div class="card card-body">
                 <div>
-                    {{post.post_comments}}
-                    <span>{{ post.name }}</span><span>{{ post.created_on }}</span>
+                    {{comment.post_comments}}
+                    <span>{{ comment.name }}</span><span>{{ comment.created_on }}</span>
                 </div>
-                <div>{{ post.comment_body }}</div>
+                <div>{{ comment.comment_body }}</div>
             </div>
+            {% endfor %}
     </div>
 </div>
 </div>

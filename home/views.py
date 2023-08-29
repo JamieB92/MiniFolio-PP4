@@ -10,6 +10,11 @@ class LandingPage(View):
 
 
 class UploadList(generic.ListView):
-    model = userPosts, postComments
-    queryset = userPosts.objects.order_by("-posted_on")
-    template_name = "home.html"
+    def get(self, request):
+        comments = postComments.objects.all()
+        posts = userPosts.objects.all()
+        context = {
+            'comments': comments,
+            'posts': posts
+        }
+        return render(request, 'home.html', context)
