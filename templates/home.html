@@ -6,7 +6,7 @@
 
 <!-- Blog Entries Column -->
 
-    {% for post in post %}
+    {% for post in posts %}
 <div class="flex-ct">
     <div class="content">
         <div>
@@ -30,20 +30,22 @@
         </div>
         <div>
             <p class="d-inline-flex gap-1">
-                {% for comment in comments %}
-                <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-                    aria-controls="collapseExample">
-                    Show Comments
-                </a>
+                
             </p>
-            <div class="collapse" id="collapseExample">
                 <div class="card">
+                    {% for comment in comments %}
+                    {% if comment.post_comments.id == post.id %}
                     <div>
                         <span>{{ user.username }}</span><span>{{ comment.created_on }}</span>
                     </div>
+                    
                     <div>{{ comment.comment_body }}</div>
+                    {% else %}
+                    <div>No comments</div>
+                    {% endif %}
                 </div>
                 {% endfor %}
+                
                 <div>
                     {% if user.is_authenticated %}
                     <h3>Comment:</h3>
