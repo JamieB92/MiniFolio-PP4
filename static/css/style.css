@@ -297,7 +297,14 @@ button a:hover {
 
 /* Home Page */
 
+.card {
+    width: 600px;
+}
 
+.comment-form {
+    
+
+}
 
 
 /*    Media Querys       */

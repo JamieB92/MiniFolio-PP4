@@ -51,9 +51,12 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_summernote',
+    'crispy_forms',
     'home',
     'userprofile',
-    'django_summernote',
+
+
 ]
 
 SITE_ID = 1
@@ -63,6 +66,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

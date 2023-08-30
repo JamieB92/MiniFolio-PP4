@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% load cloudinary %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 
 <!-- Blog Entries Column -->
-
-
 
     {% for post in post %}
 <div class="flex-ct">
@@ -28,11 +27,8 @@
         </div>
         <div>
             {{ post.caption }}
-
         </div>
-
         <div>
-
             <p class="d-inline-flex gap-1">
                 {% for comment in comments %}
                 <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
@@ -40,15 +36,25 @@
                     Show Comments
                 </a>
             </p>
-
             <div class="collapse" id="collapseExample">
-                <div class="card card-body">
+                <div class="card">
                     <div>
-                        <span>{{ comment.name }}</span><span>{{ comment.created_on }}</span>
+                        <span>{{ user.username }}</span><span>{{ comment.created_on }}</span>
                     </div>
                     <div>{{ comment.comment_body }}</div>
                 </div>
                 {% endfor %}
+                <div>
+                    {% if user.is_authenticated %}
+                    <h3>Comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="post" class="comment-form">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import userPosts
 from .models import postComments
+from .forms import CommentForm
 
 
 class LandingPage(View):
@@ -17,6 +18,7 @@ class UploadList(View):
             request, "home.html",
             {
                 "post": post,
-                "comments": comments
+                "comments": comments,
+                "comment_form": CommentForm()
             }
         )
