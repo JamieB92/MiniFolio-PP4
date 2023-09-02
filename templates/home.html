@@ -6,7 +6,7 @@
 
 <!-- Blog Entries Column -->
 
-    {% for post in posts %}
+{% for post in posts %}
 <div class="flex-ct">
     <div class="content">
         <div>
@@ -26,40 +26,42 @@
             {{ post.header }}
         </div>
         <div>
-            {{ post.caption }}
+            <p>{{ post.caption }}</p>
         </div>
+
         <div>
             <p class="d-inline-flex gap-1">
-                
+                <a data-bs-toggle="collapse" href="#collapseExample{{ post.id }}" role="button" aria-expanded="false"
+                    aria-controls="collapseExample{{ post.id }}"> Show Comments</a>
             </p>
+            <div class="collapse" id="collapseExample{{ post.id }}">
                 <div class="card">
                     {% for comment in comments %}
                     {% if comment.post_comments.id == post.id %}
                     <div>
                         <span>{{ user.username }}</span><span>{{ comment.created_on }}</span>
                     </div>
-                    
-                    <div>{{ comment.comment_body }}</div>
+                    <div>{{ comment.comment_body }}</div><br>
+                    <br>
                     {% else %}
                     <div>No comments</div>
                     {% endif %}
+                    {% endfor %}
                 </div>
-                {% endfor %}
-                
-                <div>
-                    {% if user.is_authenticated %}
-                    <h3>Comment:</h3>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form method="post" class="comment-form">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="button">Submit</button>
-                    </form>
-                    {% endif %}
-                </div>
-            </div>
+        <div>
+            {% if user.is_authenticated %}
+            <h3>Comment:</h3>
+            <p>Posting as: {{ user.username }}</p>
+            <form method="post" class="comment-form">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="button">Submit</button>
+            </form>
+            {% endif %}
         </div>
     </div>
+</div>
+</div>
 </div>
 {% endfor %}
 
