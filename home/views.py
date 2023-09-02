@@ -14,11 +14,49 @@ class UploadList(generic.ListView):
     def get(self, request):
         posts = userPosts.objects.order_by("-posted_on")
         comments = postComments.objects.order_by("-created_on")
+
         return render(
             request, "home.html",
             {
                 "posts": posts,
                 "comments": comments,
-                "comment_form": CommentForm()
             }
+        )
+
+
+class PostComment(View):
+
+    def get(self, request):
+        comment = comment.post_comments.id == post.id
+        id = post.id
+        print(post.id)
+        comment_form = CommentForm(data=request.POST)
+        return render(
+            request,
+            "post-comment.html",
+            {
+                "comment": comment,
+                "comment_form": comment_form,
+            },
+        )
+
+    def post(self, request):
+
+        queryset = userPosts.objects
+        post = get_object_or_404(queryset)
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            "home.html",
+            {
+                "comment_form": comment_form,
+            },
         )

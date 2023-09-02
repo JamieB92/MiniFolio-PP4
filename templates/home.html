@@ -26,6 +26,7 @@
             {{ post.header }}
         </div>
         <div>
+            {{ post.id }}
             <p>{{ post.caption }}</p>
         </div>
 
@@ -41,6 +42,7 @@
                     <div>
                         <span>{{ user.username }}</span><span>{{ comment.created_on }}</span>
                     </div>
+
                     <div>{{ comment.comment_body }}</div><br>
                     <br>
                     {% else %}
@@ -48,20 +50,10 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-        <div>
-            {% if user.is_authenticated %}
-            <h3>Comment:</h3>
-            <p>Posting as: {{ user.username }}</p>
-            <form method="post" class="comment-form">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="button">Submit</button>
-            </form>
-            {% endif %}
+                <button class="button"><a href="{% url 'post-comment' %}">Post</a></button>
+            </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 {% endfor %}
 
