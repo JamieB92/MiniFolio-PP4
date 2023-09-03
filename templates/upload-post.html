@@ -4,32 +4,12 @@
 
 <div>
     {% if user.is_authenticated %}
-    <h3>Upload A Post</h3>
+    <h3>Upload:</h3>
     <p>Posting as: {{ user.username }}</p>
-    <form method="POST" action="upload-post">
+    <form method="post">
+        {{ upload_form | crispy }}
         {% csrf_token %}
-        <div>
-            <p>
-                <label for="header">Post Header:</label>
-                <input type="text" id="header" name="header">
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="post_image">Choose a Image:</label>
-                <input type="file" id="post_image" name="post_image" accept="image/png, image/jpeg" />
-
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="caption">Caption:</label>
-                <input type="text" id="caption" name="caption">
-            </p>
-        </div>
-        <div>
-            <button class="button" type="submit">Submit</button>
-        </div>
+        <button type="submit" class="button">Submit</button>
     </form>
     {% endif %}
 </div>

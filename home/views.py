@@ -27,15 +27,36 @@ class UploadList(generic.ListView):
 
 class UploadPost(View):
 
-    def create_view(request):
-        context = {}
+    def get(self, request):
+        upload_form = UploadForm(data=request.POST)
+        return render(
+            request,
+            "upload-post.html",
+            {
+                "upload_form": upload_form,
+            },
+        )
 
-        form = UploadForm(request.POST or None)
-        if form.is_valid():
-            form.save()
+    def post(self, request):
 
-        context['form'] = form
-        return render(request, "upload-post.html", context)
+        post = get_object_or_404(post.creator)
+        upload_form = UploadForm(data=request.POST)
+        if upload_form.is_valid():
+            upload_form.instance.name = request.user.username
+            upload = upload_form.save(commit=False)
+            upload.userPosts = post
+            upload.save()
+            return redirect('home')
+        else:
+            upload_form = UploadForm()
+
+        return render(
+            request,
+            "home.html",
+            {
+                "upload_form": upload_form,
+            },
+        )
 
 
 class PostComment(View):

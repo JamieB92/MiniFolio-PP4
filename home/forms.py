@@ -12,8 +12,4 @@ class CommentForm(forms.ModelForm):
 class UploadForm(forms.ModelForm):
     class Meta:
         model = userPosts
-        fields = [
-            "header",
-            "post_image",
-            "caption",
-        ]
+        fields = ('header', 'post_image', 'caption',)
