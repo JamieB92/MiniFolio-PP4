@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import userPosts
 from .models import postComments
@@ -26,30 +26,26 @@ class UploadList(generic.ListView):
 
 class PostComment(View):
 
-    def get(self, request):
-        comment = comment.post_comments.id == post.id
-        id = post.id
-        print(post.id)
+    def get(self, request, pk):
         comment_form = CommentForm(data=request.POST)
         return render(
             request,
             "post-comment.html",
             {
-                "comment": comment,
                 "comment_form": comment_form,
             },
         )
 
-    def post(self, request):
+    def post(self, request, pk):
 
-        queryset = userPosts.objects
-        post = get_object_or_404(queryset)
+        post = get_object_or_404(userPosts, pk=pk)
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post
+            comment.post_comments = post
             comment.save()
+            return redirect('home')
         else:
             comment_form = CommentForm()
 

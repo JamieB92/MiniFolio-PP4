@@ -50,7 +50,7 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-                <button class="button"><a href="{% url 'post-comment' %}">Post</a></button>
+                <button class="button"><a href="{% url 'post-comment' post.pk %}">Post</a></button>
             </div>
         </div>
     </div>
