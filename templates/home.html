@@ -10,7 +10,7 @@
 <div class="flex-ct">
     <div class="content">
         <div>
-            <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
+            <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span><span><a href="{% url 'edit-post' post.pk %}">Edit</a></span>
         </div>
         <div>
             <img src="{{ post.post_image.url }}" class="" alt="...">

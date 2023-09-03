@@ -5,12 +5,12 @@ from .models import postComments
 from .forms import CommentForm
 from .forms import UploadForm
 
-
+# Landing Page
 class LandingPage(View):
     def get(self, request):
         return render(request, "index.html")
 
-
+# Home page that shows all posts uploaded by users 
 class UploadList(generic.ListView):
     def get(self, request):
         posts = userPosts.objects.order_by("-posted_on")
@@ -24,7 +24,7 @@ class UploadList(generic.ListView):
             }
         )
 
-
+# Create a new post 
 class UploadPost(View):
 
     def get(self, request):
@@ -38,7 +38,6 @@ class UploadPost(View):
         )
 
     def post(self, request,):
-        posts = userPosts.objects
         upload_form = UploadForm(request.POST, request.FILES)
         if upload_form.is_valid():
             upload = upload_form.save(commit=False)
@@ -54,7 +53,40 @@ class UploadPost(View):
             },
         )
 
+#  Edit a Post
+class EditPost(generic.UpdateView):
+    def get(self, request, pk):
+        post = get_object_or_404(userPosts, pk=pk)
+        upload_form = UploadForm(request.POST, request.FILES)
+        fields = ['header', 'post_image', 'caption']
+        return render(
+            request,
+            "edit-post.html",
+            {
+                "upload_form": upload_form,
+                "post": post,
+                "fields": fields,
+            },  ) 
+    
+    
+    def post(self, request, pk):
+        post = get_object_or_404(userPosts, pk=pk)
+        upload_form = UploadForm(request.POST, request.FILES)
+        if upload_form.is_valid():
+            upload = upload_form.save(commit=False)
+            upload.creator = request.user
+            upload.save()
+            return redirect('home')
 
+        return render(
+            request,
+            "upload-post.html",
+            {
+                "upload_form": upload_form,
+            },
+        )
+    
+# Post a comment to a post 
 class PostComment(View):
 
     def get(self, request, pk):
