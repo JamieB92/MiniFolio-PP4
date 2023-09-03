@@ -3,6 +3,7 @@ from django.views import generic, View
 from .models import userPosts
 from .models import postComments
 from .forms import CommentForm
+from .forms import UploadForm
 
 
 class LandingPage(View):
@@ -22,6 +23,19 @@ class UploadList(generic.ListView):
                 "comments": comments,
             }
         )
+
+
+class UploadPost(View):
+
+    def create_view(request):
+        context = {}
+
+        form = UploadForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+
+        context['form'] = form
+        return render(request, "upload-post.html", context)
 
 
 class PostComment(View):

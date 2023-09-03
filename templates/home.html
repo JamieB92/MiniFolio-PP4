@@ -26,7 +26,6 @@
             {{ post.header }}
         </div>
         <div>
-            {{ post.id }}
             <p>{{ post.caption }}</p>
         </div>
 
@@ -39,18 +38,15 @@
                 <div class="card">
                     {% for comment in comments %}
                     {% if comment.post_comments.id == post.id %}
-                    <div>
-                        <span>{{ user.username }}</span><span>{{ comment.created_on }}</span>
-                    </div>
-
-                    <div>{{ comment.comment_body }}</div><br>
                     <br>
-                    {% else %}
-                    <div>No comments</div>
+                    <div>
+                        <span>{{ user.username }}</span>  <span>{{ comment.created_on }}</span>
+                    </div>
+                    <div>{{ comment.comment_body }}</div><br>
                     {% endif %}
                     {% endfor %}
                 </div>
-                <button class="button"><a href="{% url 'post-comment' post.pk %}">Post</a></button>
+                <button class="button"><a href="{% url 'post-comment' post.pk %}">Comment</a></button>
             </div>
         </div>
     </div>
