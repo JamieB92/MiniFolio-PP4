@@ -37,22 +37,18 @@ class UploadPost(View):
             },
         )
 
-    def post(self, request):
-
-        post = get_object_or_404(post.creator)
-        upload_form = UploadForm(data=request.POST)
+    def post(self, request,):
+        posts = userPosts.objects
+        upload_form = UploadForm(request.POST, request.FILES)
         if upload_form.is_valid():
-            upload_form.instance.name = request.user.username
             upload = upload_form.save(commit=False)
-            upload.userPosts = post
+            upload.creator = request.user
             upload.save()
             return redirect('home')
-        else:
-            upload_form = UploadForm()
 
         return render(
             request,
-            "home.html",
+            "upload-post.html",
             {
                 "upload_form": upload_form,
             },

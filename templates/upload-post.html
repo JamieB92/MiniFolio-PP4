@@ -6,7 +6,7 @@
     {% if user.is_authenticated %}
     <h3>Upload:</h3>
     <p>Posting as: {{ user.username }}</p>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {{ upload_form | crispy }}
         {% csrf_token %}
         <button type="submit" class="button">Submit</button>
