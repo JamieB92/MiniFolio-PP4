@@ -10,7 +10,12 @@
 <div class="flex-ct">
     <div class="content">
         <div>
-            <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span><span><a href="{% url 'edit-post' post.pk %}">Edit</a></span>
+            <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
+            {% if post.creator == user %}
+            <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span>
+            {% else %}
+
+            {% endif %}
         </div>
         <div>
             <img src="{{ post.post_image.url }}" class="" alt="...">
@@ -40,7 +45,7 @@
                     {% if comment.post_comments.id == post.id %}
                     <br>
                     <div>
-                        <span>{{ user.username }}</span>  <span>{{ comment.created_on }}</span>
+                        <span>{{ post.creator }}</span>  <span>{{ comment.created_on }}</span>
                     </div>
                     <div>{{ comment.comment_body }}</div><br>
                     {% endif %}
