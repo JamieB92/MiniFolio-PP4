@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
+from django.views.generic.edit import UpdateView
 from .models import userPosts
 from .models import postComments
 from .forms import CommentForm
 from .forms import UploadForm
+from .forms import EditForm
 
 # Landing Page
 class LandingPage(View):
@@ -55,37 +57,13 @@ class UploadPost(View):
 
 #  Edit a Post
 class EditPost(generic.UpdateView):
-    def get(self, request, pk):
-        post = get_object_or_404(userPosts, pk=pk)
-        upload_form = UploadForm(request.POST, request.FILES)
-        fields = ['header', 'post_image', 'caption']
-        return render(
-            request,
-            "edit-post.html",
-            {
-                "upload_form": upload_form,
-                "post": post,
-                "fields": fields,
-            },  ) 
-    
-    
-    def post(self, request, pk):
-        post = get_object_or_404(userPosts, pk=pk)
-        upload_form = UploadForm(request.POST, request.FILES)
-        if upload_form.is_valid():
-            upload = upload_form.save(commit=False)
-            upload.creator = request.user
-            upload.save()
-            return redirect('home')
+    model = userPosts
+    fields = ["header", "post_image", "caption"]
+    template_name = "edit-post.html"
+    success_url = 'home'
 
-        return render(
-            request,
-            "upload-post.html",
-            {
-                "upload_form": upload_form,
-            },
-        )
     
+
 # Post a comment to a post 
 class PostComment(View):
 

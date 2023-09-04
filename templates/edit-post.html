@@ -6,10 +6,10 @@
     {% if user.is_authenticated %}
     <h3>Edit:</h3>
     <p>Posting as: {{ user.username }}</p>
-    <form method="post" enctype="multipart/form-data">
-        {{ upload_form | crispy }}
+    <form action="{{ post.pk }}" method="post" enctype="multipart/form-data">
+        {{ form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="button">Submit</button>
+        <button type="submit" value="Save" class="button">Submit</button>
     </form>
     {% endif %}
 </div>

@@ -13,3 +13,8 @@ class UploadForm(forms.ModelForm):
     class Meta:
         model = userPosts
         fields = ('header', 'post_image', 'caption',)
+
+class EditForm(forms.ModelForm):
+    class Meta:
+        model = userPosts
+        fields = ('header', 'post_image', 'caption',)

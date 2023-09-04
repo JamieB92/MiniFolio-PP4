@@ -5,7 +5,6 @@
 
 
 <!-- Blog Entries Column -->
-
 {% for post in posts %}
 <div class="flex-ct">
     <div class="content">
@@ -13,7 +12,6 @@
             <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
             {% if post.creator == user %}
             <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span>
-            {% else %}
 
             {% endif %}
         </div>
@@ -58,4 +56,4 @@
 </div>
 {% endfor %}
 
-{%endblock%}
+{% endblock %}
