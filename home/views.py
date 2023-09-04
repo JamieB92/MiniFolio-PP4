@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
 from .models import userPosts
 from .models import postComments
 from .forms import CommentForm
@@ -60,9 +61,13 @@ class EditPost(generic.UpdateView):
     model = userPosts
     fields = ["header", "post_image", "caption"]
     template_name = "edit-post.html"
-    success_url = 'home'
+    success_url = "/home"
 
-    
+# Delete A Post
+class DeletePost(DeleteView):
+    model = userPosts
+    success_url = "/home"
+    template_name = "delete-post.html"
 
 # Post a comment to a post 
 class PostComment(View):

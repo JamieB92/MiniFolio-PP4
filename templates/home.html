@@ -11,7 +11,7 @@
         <div>
             <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
             {% if post.creator == user %}
-            <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span>
+            <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span> <span><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
 
             {% endif %}
         </div>
