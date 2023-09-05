@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load cloudinary %}
+{% block content %}
+
+{% for profile in object_list %}
+
+{{ profile.id }}
+
+
+{% endfor %}
+{% endblock %}
