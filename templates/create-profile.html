@@ -7,7 +7,7 @@
     <p>Username: {{ user.username }}</p>
     <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-        {{ form.as_p | crispy }}
+        {{ form.as_p | crispy}}
         <button type="submit" class="button" value="submit">Submit</button>
     </form>
 </div>

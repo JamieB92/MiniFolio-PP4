@@ -23,9 +23,9 @@
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ url 'create-profile' }}" />
         {% endif %}
-        <button class="button" type="submit">{% trans "Sign Up" %} &raquo; <a href="{{ url 'create-profile' }}"></a></button>
+        <button class="button" type="submit">{% trans "Sign Up" %} &raquo;</button>
       </form>
 
     </div>

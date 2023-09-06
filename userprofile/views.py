@@ -12,4 +12,5 @@ class UserProfile(ListView):
 
 
 class CreateUserProfile(CreateView):
-   fields = ['Profile_image', 'profile_bio']
+    model = userProfiles
+    fields = ['profile_image', 'profile_bio']
