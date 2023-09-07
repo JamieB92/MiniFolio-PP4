@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 
 <div>
@@ -8,7 +9,7 @@
     <p>Username: {{ user.username }}</p>
     <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-        {{ form.as_p }}
+            {{ profile_form | crispy }}
         <button type="submit" class="button" value="submit">Submit</button>
         {% endif %}
     </form>
