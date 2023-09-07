@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load crispy_forms_tags %}
+
 
 <div>
+    {% if user.is_authenticated %}
     <h3>Create Profile:</h3>
     <p>Username: {{ user.username }}</p>
     <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-        {{ form.as_p | crispy}}
+        {{ form.as_p }}
         <button type="submit" class="button" value="submit">Submit</button>
+        {% endif %}
     </form>
 </div>
 

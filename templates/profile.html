@@ -2,10 +2,14 @@
 {% load cloudinary %}
 {% block content %}
 
-{% for profile in object_list %}
 
-{{ profile.creator }}
+{% for object in object_list %}
+{{ user.username}}
 
+{{ object.profile_image }}
 
+{{ object.profile_bio }}
+{% empty %}
+    no profile setup
 {% endfor %}
 {% endblock %}
