@@ -301,7 +301,14 @@ button a:hover {
     width: 600px;
 }
 
+/* Profile */
 
+.profile-image {
+    
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
 
 
 /*    Media Querys       */
