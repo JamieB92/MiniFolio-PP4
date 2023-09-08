@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from .models import userPosts
@@ -7,11 +7,17 @@ from .forms import ProfileForm
 
 
 class UserProfile(ListView):
-    model = userProfiles
-    template_name = "profile.html"
-
-    def get_profile(self):
-        return self.request.user
+    
+    def get(self,request, pk):
+        profile = get_object_or_404(userProfiles, pk=pk)
+        myposts = userPosts.objects.order_by("-posted_on")
+        return render(
+            request, 'profile.html', 
+            {
+                'profile': profile,
+                'myposts': myposts,
+            }
+            )
 
 
 class CreateUserProfile(CreateView):

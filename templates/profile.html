@@ -3,13 +3,11 @@
 {% block content %}
 
 
-{% for object in object_list %}
-{{ user.username}}
+{{profile.user}}
+{{profile.profile_image}}
+{{profile.profile_bio}}
 
-{{ object.profile_image }}
-
-{{ object.profile_bio }}
-{% empty %}
-    no profile setup
+{% for post in myposts %}
+{{ post.creator }}
 {% endfor %}
 {% endblock %}
