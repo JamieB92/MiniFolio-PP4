@@ -9,13 +9,11 @@ from .forms import ProfileForm
 class UserProfile(ListView):
     
     def get(self,request, pk):
-        profile = get_object_or_404(userProfiles, pk=pk)
-        myposts = userPosts.objects.order_by("-posted_on")
+        profile = userProfiles.objects.get(user=pk)
         return render(
             request, 'profile.html', 
             {
                 'profile': profile,
-                'myposts': myposts,
             }
             )
 
