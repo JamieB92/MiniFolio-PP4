@@ -3,7 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-{{ user.id}}
+
 <!-- Blog Entries Column -->
 {% for post in posts %}
 <div class="flex-ct">
@@ -47,6 +47,9 @@
                     </div>
                     <div>{{ comment.comment_body }}</div><br>
                     {% endif %}
+                    {% empty %}
+                    <br>
+                    <span><p>No Comments</p></span>
                     {% endfor %}
                 </div>
                 <button class="button"><a href="{% url 'post-comment' post.pk %}">Comment</a></button>
