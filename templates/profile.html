@@ -5,15 +5,19 @@
 <div class="flex-ct">
     <div class="profile-content">
         <div>
-            <a href="{% url 'edit-profile' profile.pk %}">edit</a>
+            
         </div>
         <div>
-            <span><img src="{{ profile.profile_image.url }}" class="profile-image" alt="{{ profile.user }} profile photo"></span> 
-            <h2>{{ profile.user }}</h2>
+            <img src="{{ profile.profile_image.url }}" class="profile-image" alt="{{ profile.user }} profile photo">
+            {% if profile.user == user %}
+            <h2>{{ profile.user }}</h2> <a href="{% url 'edit-profile' profile.pk %}">Edit Profile</a>
+            {% endif %}
         </div>
         <br>
         <div>
-        {{profile.profile_bio}}
+            <p>
+                 {{profile.profile_bio}}
+             </p>
         </div>
     </div>
     {% for post in myposts %}
@@ -22,10 +26,10 @@
         <div class="content">
             <div>
                 <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
-                {% if post.creator == user %}
+                
                 <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span> <span><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
     
-                {% endif %}
+                
             </div>
             <div>
                 <img src="{{ post.post_image.url }}" class="post-img" alt="...">
