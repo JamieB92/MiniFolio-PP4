@@ -3,7 +3,6 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-
 <!-- Blog Entries Column -->
 {% for post in posts %}
 <div class="flex-ct">
@@ -23,7 +22,7 @@
                 <strong>
                     <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
                         {% csrf_token %}
-                        {% if liked %}
+                        {% if super_vote.id == True %}
                         <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-star fa-xl"></i></button>
                         {% else %}
                         <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-regular fa-star fa-xl"></i></button>
@@ -36,7 +35,7 @@
             <strong>
                 <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
                     {% csrf_token %}
-                    {% if upVoted %}
+                    {% if user.upVoted %}
                     <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-circle-arrow-up fa-xl"></i></button>
                     {% else %}
                     <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-up-long fa-xl"></i></button>
@@ -49,10 +48,10 @@
         <strong>
             <form class="d-inline" action="{% url 'down-vote' post.pk %}" method="POST">
                 {% csrf_token %}
-                {% if downVoted %}
+                {% if user.downVoted %}
                 <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-circle-arrow-down fa-xl"></i></button>
                 {% else %}
-                <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-down-long fa-xl"></i></button>
+                <button type="submit" value="{{ post.pk }}"  class="button-like"><i class="fa-solid fa-down-long fa-xl"></i></button>
                 {% endif %}
             </form>
             <span class="votes"> {{ post.total_down_vote }} </span>

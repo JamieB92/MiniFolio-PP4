@@ -148,8 +148,8 @@ class PostDownVoted(View):
         downVoted = userPosts.objects.filter(down_vote__id__in=[user.id])
 
         if downVoted:
-            posts.super_vote.remove(request.user)
+            posts.down_vote.remove(request.user)
         else:
-            posts.super_vote.add(request.user)
+            posts.down_vote.add(request.user)
 
         return HttpResponseRedirect(reverse('home'))

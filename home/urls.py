@@ -16,5 +16,5 @@ urlpatterns = [
     path('<int:pk>/delete-post', DeletePost.as_view(), name="delete-post"),
     path('<int:pk>/super-vote', PostSuperLike.as_view(), name='super-vote'),
     path('<int:pk>/up-vote', PostUpVoted.as_view(), name='up-vote'),
-    path('<int:pk>/down-vote', PostUpVoted.as_view(), name='down-vote'),
+    path('<int:pk>/down-vote', PostDownVoted.as_view(), name='down-vote'),
 ]
