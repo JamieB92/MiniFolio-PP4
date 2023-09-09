@@ -311,13 +311,28 @@ button a:hover {
 
 
 
-/* Home Page */
+/* Posts */
 
 
 .card {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.post-stamp-right {
+    padding: 10px 15px 10px 15px;
+    float: right;
+}
+
+
+.post-stamp-left {
+    padding: 10px 15px 10px 15px;
+    float: left;
+}
+
+.user-title {
+    padding: 10px 15px 10px 15px
 }
 
 .likes-container {
@@ -341,23 +356,26 @@ button a:hover {
     margin-right: 2.5%;
 }
 
+
 /* Profile */
 
 .profile-content {
     width: 800px;
+    padding: 30px 0 30px 0;
     text-align: center;
-    background-color: rgb(35, 35, 35);
     border-style: solid;
     border-color: rgb(51, 51, 51);
 }
 
 
 .profile-image {
-    
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    margin-bottom: 15px;
 }
+
+
 
  .delete-content {
     width: 800px;

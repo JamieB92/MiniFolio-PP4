@@ -8,21 +8,19 @@
 <div class="flex-ct">
     <div class="content">
         <div>
-            <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
-            {% if post.creator == user %}
-            <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span> <span><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
-
-            {% endif %}
+            <span class="post-stamp-left">{{ post.posted_on}}</span>
+            <span class="post-stamp-right"><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
+            <span class="post-stamp-right"><a href="{% url 'edit-post' post.pk %}">Edit</a></span>      
         </div>
         <div>
-            <img src="{{ post.post_image.url }}" class="post-img" alt="...">
+            <img src="{{ post.post_image.url }}" class="post-img" alt="{{post.creator}}'s image of a miniature">
         </div>
         <div class="likes-container">
             <span class="likes">
                 <strong>
                     <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
                         {% csrf_token %}
-                        {% if super_vote.id == user.id %}
+                        {% if liked %}
                         <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-star fa-xl"></i></button>
                         {% else %}
                         <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-regular fa-star fa-xl"></i></button>
@@ -35,7 +33,7 @@
             <strong>
                 <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
                     {% csrf_token %}
-                    {% if post.up_vote == True %}
+                    {% if upVoted %}
                     <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-circle-arrow-up fa-xl"></i></button>
                     {% else %}
                     <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-up-long fa-xl"></i></button>
@@ -48,7 +46,7 @@
         <strong>
             <form class="d-inline" action="{% url 'down-vote' post.pk %}" method="POST">
                 {% csrf_token %}
-                {% if user.downVoted %}
+                {% if downVoted %}
                 <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-circle-arrow-down fa-xl"></i></button>
                 {% else %}
                 <button type="submit" value="{{ post.pk }}"  class="button-like"><i class="fa-solid fa-down-long fa-xl"></i></button>
@@ -60,7 +58,12 @@
     </span>
         </div>
         <div>
+            <h3>
             {{ post.header }}
+            </h3>
+        </div>
+        <div class="user-title">
+            <h4>Posted by: {{ post.creator }}</h4>
         </div>
         <div>
             <p>{{ post.caption }}</p>
