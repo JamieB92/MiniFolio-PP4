@@ -359,7 +359,15 @@ button a:hover {
     border-radius: 50%;
 }
 
-
+ .delete-content {
+    width: 800px;
+    padding: 100px;
+    text-align: center;
+    background-color: rgb(35, 35, 35);
+    border-style: solid;
+    border-color: rgb(51, 51, 51);
+    margin: 10px;
+ }
 
 /*    Media Querys       */
 

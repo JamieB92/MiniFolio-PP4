@@ -22,7 +22,7 @@
                 <strong>
                     <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
                         {% csrf_token %}
-                        {% if super_vote.id == True %}
+                        {% if super_vote.id == user.id %}
                         <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-star fa-xl"></i></button>
                         {% else %}
                         <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-regular fa-star fa-xl"></i></button>
@@ -35,7 +35,7 @@
             <strong>
                 <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
                     {% csrf_token %}
-                    {% if user.upVoted %}
+                    {% if post.up_vote == True %}
                     <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-circle-arrow-up fa-xl"></i></button>
                     {% else %}
                     <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-up-long fa-xl"></i></button>
