@@ -9,8 +9,10 @@
     <div class="content">
         <div>
             <span class="post-stamp-left">{{ post.posted_on}}</span>
+            {% if post.creator == user %}
             <span class="post-stamp-right"><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
-            <span class="post-stamp-right"><a href="{% url 'edit-post' post.pk %}">Edit</a></span>      
+            <span class="post-stamp-right"><a href="{% url 'edit-post' post.pk %}">Edit</a></span>
+            {% endif %}      
         </div>
         <div>
             <img src="{{ post.post_image.url }}" class="post-img" alt="{{post.creator}}'s image of a miniature">
