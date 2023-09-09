@@ -145,6 +145,19 @@ button a:hover {
 }
 
 
+.button-like {
+    color: rgb(240, 153, 51);
+    border: none;
+    background: transparent;
+}
+
+.button-like:hover,
+.button-like:active {
+    color: rgb(240, 153, 51);
+    background: transparent;
+    border: none;
+}
+
 /* Navbar and Footer                  */
 
 .navbar,
@@ -305,6 +318,19 @@ button a:hover {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.likes-container {
+    margin: 25px 0 30px 0;
+}
+
+.likes {
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+}
+
+.votes {
+    margin-left: 10px;
 }
 
 /* Posts Image */

@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from .models import userPosts
@@ -7,6 +8,7 @@ from .models import postComments
 from .forms import CommentForm
 from .forms import UploadForm
 from .forms import EditForm
+from .models import User
 
 # Landing Page
 class LandingPage(View):
@@ -102,3 +104,52 @@ class PostComment(View):
                 "comment_form": comment_form,
             },
         )
+
+
+class PostSuperLike(View):
+    
+    def post(self, request, pk):
+        posts = userPosts.objects.get(id=pk)
+        user = User.objects.get(id=request.user.id)
+
+        liked = userPosts.objects.filter(super_vote__id__in=[user.id])
+
+        if liked:
+            posts.super_vote.remove(request.user)
+        else:
+            posts.super_vote.add(request.user)
+
+        return HttpResponseRedirect(reverse('home'))
+
+
+class PostUpVoted(View):
+    
+    def post(self, request, pk):
+        posts = userPosts.objects.get(id=pk)
+        user = User.objects.get(id=request.user.id)
+
+        upVoted = userPosts.objects.filter(up_vote__id__in=[user.id])
+
+        if upVoted:
+            posts.up_vote.remove(request.user)
+        else:
+            posts.up_vote.add(request.user)
+
+        return HttpResponseRedirect(reverse('home'))
+
+
+
+class PostDownVoted(View):
+    
+    def post(self, request, pk):
+        posts = userPosts.objects.get(id=pk)
+        user = User.objects.get(id=request.user.id)
+
+        downVoted = userPosts.objects.filter(down_vote__id__in=[user.id])
+
+        if downVoted:
+            posts.super_vote.remove(request.user)
+        else:
+            posts.super_vote.add(request.user)
+
+        return HttpResponseRedirect(reverse('home'))

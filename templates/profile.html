@@ -35,12 +35,10 @@
                 <img src="{{ post.post_image.url }}" class="post-img" alt="...">
             </div>
             <div>
-                <span>
-                    <i class="fa-solid fa-star"></i>{{ post.total_super_vote }}
-                    <i class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}
-                    <i class="fa-regular fa-circle-down"></i>{{post.total_down_vote }}
-                </span>
-            </div>
+               <span><i class="far fa-star"></i>{{ post.total_super_vote }}</span>
+                <span><i class="far fa-circle-up"></i> {{ post.total_up_votes }}</span>
+                <span><i class="far fa-circle-down"></i>{{post.total_down_vote }}</span> 
+
             <div>
                 {{ post.header }}
             </div>

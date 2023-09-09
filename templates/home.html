@@ -18,12 +18,47 @@
         <div>
             <img src="{{ post.post_image.url }}" class="post-img" alt="...">
         </div>
-        <div>
-            <span>
-                <i class="fa-solid fa-star"></i>{{ post.total_super_vote }}
-                <i class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}
-                <i class="fa-regular fa-circle-down"></i>{{post.total_down_vote }}
+        <div class="likes-container">
+            <span class="likes">
+                <strong>
+                    <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-star fa-xl"></i></button>
+                        {% else %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-regular fa-star fa-xl"></i></button>
+                        {% endif %}
+                    </form>
+                <span class="votes"> {{ post.total_super_vote }} </span>
+                </strong>        
             </span>
+            <span class="likes">
+            <strong>
+                <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
+                    {% csrf_token %}
+                    {% if upVoted %}
+                    <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-circle-arrow-up fa-xl"></i></button>
+                    {% else %}
+                    <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-up-long fa-xl"></i></button>
+                    {% endif %}
+                </form>
+            <span class="votes"> {{ post.total_up_votes }} </span>
+            </strong>        
+            </span>
+        <span class="likes">
+        <strong>
+            <form class="d-inline" action="{% url 'down-vote' post.pk %}" method="POST">
+                {% csrf_token %}
+                {% if downVoted %}
+                <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-circle-arrow-down fa-xl"></i></button>
+                {% else %}
+                <button type="submit" value="{{ post.pk }}" class="button-like"><i class="fa-solid fa-down-long fa-xl"></i></button>
+                {% endif %}
+            </form>
+            <span class="votes"> {{ post.total_down_vote }} </span>
+        </span>
+        </strong>        
+    </span>
         </div>
         <div>
             {{ post.header }}

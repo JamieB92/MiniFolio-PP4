@@ -33,6 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jamieb92-minifolio-pp4-u1uugib5fn.us2.codeanyapp.com',
+                 '8001-jamieb92-minifolio-pp4-u1uugib5fn.us2.codeanyapp.com',
                  'minifolioapp-b0e53ffaa426.herokuapp.com']
 
 
