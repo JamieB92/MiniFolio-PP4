@@ -31,9 +31,12 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .content {
+    max-width: 800px;
     text-align: center;
     background-color: rgb(35, 35, 35);
     border-style: solid;
@@ -297,11 +300,31 @@ button a:hover {
 
 /* Home Page */
 
+
 .card {
-    width: 600px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Posts Image */
+.post-img {
+    max-height: 800px;
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }
 
 /* Profile */
+
+.profile-content {
+    width: 800px;
+    text-align: center;
+    background-color: rgb(35, 35, 35);
+    border-style: solid;
+    border-color: rgb(51, 51, 51);
+}
+
 
 .profile-image {
     
@@ -309,6 +332,7 @@ button a:hover {
     height: 150px;
     border-radius: 50%;
 }
+
 
 
 /*    Media Querys       */

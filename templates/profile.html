@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load cloudinary %}
 {% block content %}
-    <div class="content">
+    
+<div class="flex-ct">
+    <div class="profile-content">
         <div>
             <a href="{% url 'edit-profile' profile.pk %}">edit</a>
         </div>
@@ -14,62 +16,59 @@
         {{profile.profile_bio}}
         </div>
     </div>
-
-{% for post in myposts %}
-{% if post.creator.id == user.id %}
-<div class="flex-ct">
-    <div class="content">
-        <div>
-            <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
-            {% if post.creator == user %}
-            <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span> <span><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
-
-            {% endif %}
-        </div>
-        <div>
-            <img src="{{ post.post_image.url }}" class="" alt="...">
-        </div>
-        <div>
-            <span>
-                <i class="fa-solid fa-star"></i>{{ post.total_super_vote }}
-                <i class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}
-                <i class="fa-regular fa-circle-down"></i>{{post.total_down_vote }}
-            </span>
-        </div>
-        <div>
-            {{ post.header }}
-        </div>
-        <div>
-            <p>{{ post.caption }}</p>
-        </div>
-
-        <div>
-            <p class="d-inline-flex gap-1">
-                <a data-bs-toggle="collapse" href="#collapseExample{{ post.id }}" role="button" aria-expanded="false"
-                    aria-controls="collapseExample{{ post.id }}"> Show Comments</a>
-            </p>
-            <div class="collapse" id="collapseExample{{ post.id }}">
-                <div class="card">
-                    {% for comment in comments %}
-                    {% if comment.post_comments.id == post.id %}
-                    <br>
-                    <div>
-                        <span>{{ comment.name }}</span>  <span>{{ comment.created_on }}</span>
+    {% for post in myposts %}
+    {% if post.creator.id == user.id %}
+    <div class="flex-ct">
+        <div class="content">
+            <div>
+                <span>{{ post.posted_on}}</span><span>{{ post.creator }}</span>
+                {% if post.creator == user %}
+                <span><a href="{% url 'edit-post' post.pk %}">Edit</a></span> <span><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
+    
+                {% endif %}
+            </div>
+            <div>
+                <img src="{{ post.post_image.url }}" class="post-img" alt="...">
+            </div>
+            <div>
+                <span>
+                    <i class="fa-solid fa-star"></i>{{ post.total_super_vote }}
+                    <i class="fa-regular fa-circle-up"></i> {{ post.total_up_votes }}
+                    <i class="fa-regular fa-circle-down"></i>{{post.total_down_vote }}
+                </span>
+            </div>
+            <div>
+                {{ post.header }}
+            </div>
+            <div>
+                <p>{{ post.caption }}</p>
+            </div>
+    
+            <div>
+                <p class="d-inline-flex gap-1">
+                    <a data-bs-toggle="collapse" href="#collapseExample{{ post.id }}" role="button" aria-expanded="false"
+                        aria-controls="collapseExample{{ post.id }}"> Show Comments</a>
+                </p>
+                <div class="collapse" id="collapseExample{{ post.id }}">
+                    <div class="card">
+                        {% for comment in comments %}
+                        {% if comment.post_comments.id == post.id %}
+                        <br>
+                        <div>
+                            <span>{{ comment.name }}</span>  <span>{{ comment.created_on }}</span>
+                        </div>
+                        <div>{{ comment.comment_body }}</div><br>
+                        {% endif %}
+                        {% empty %}
+                        <br>
+                        <span><p>No Comments</p></span>
+                        {% endfor %}
                     </div>
-                    <div>{{ comment.comment_body }}</div><br>
-                    {% endif %}
-                    {% empty %}
-                    <br>
-                    <span><p>No Comments</p></span>
-                    {% endfor %}
+                    <button class="button"><a href="{% url 'post-comment' post.pk %}">Comment</a></button>
                 </div>
-                <button class="button"><a href="{% url 'post-comment' post.pk %}">Comment</a></button>
             </div>
         </div>
     </div>
-</div>
-{% else %}
-<p>no posts</p>
 {% endif %}
 {% endfor %}
 {% endblock %}
