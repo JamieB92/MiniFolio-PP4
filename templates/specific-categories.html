@@ -6,7 +6,7 @@
 
 <div class="flex-ct">
     <div class="all-category-content">
-        <h2 class="profile-content"> {{ subject }} Categories</h2>
+        <h2>{{ subject }}</h2>
     </div>
 </div>
 
@@ -14,7 +14,6 @@
 {% for post in post_subjects %}
 
 <div class="flex-ct">
-    <h2 class="profile-content"> {{ subject }} Categories</h2>
     <div class="content">
         <div>
             <span class="post-stamp-left">{{ post.posted_on}}</span>
@@ -124,7 +123,7 @@
         <h2> Category Empty </h2>
         <br>
         <h5>This category is empty or it does not exist.</h5><br>
-        <h5>If you would like to request a new catagory please email admin@minifolio.com.</h5><br>
+        <h5>If you would like to request a new category please email admin@minifolio.com.</h5><br>
         <br>
         <h4>If you believe there is an issue please email the support at support@minifolio.com.</h4>
     </div>
