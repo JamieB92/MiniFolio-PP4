@@ -65,7 +65,7 @@
             </h3>
         </div>
         <div class="user-title">
-            <h4>Posted by: {{ post.creator }}</h4>
+            <h4>Posted by: <a href="{% url 'profile' post.creator.pk %}">{{ post.creator }}</a></h4>
         </div>
         <div>
             <p>{{ post.caption }}</p>

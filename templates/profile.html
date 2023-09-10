@@ -19,7 +19,7 @@
         </div>
     </div>
 {% for post in myposts %}
-        {% if post.creator.id == user.id %}
+        {% if post.creator.id == profile.user.id %}
     <div class="flex-ct">
         <div class="content">
             <div>
