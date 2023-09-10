@@ -9,7 +9,6 @@ class userProfiles(models.Model):
     profile_image = CloudinaryField('image')
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False,
                              blank=False, related_name='user_profile')
-    username = models.CharField(max_length=30, blank=True, null=True)
     profile_bio = models.TextField(max_length=350, blank=True, null=True)
 
 
