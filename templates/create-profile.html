@@ -8,8 +8,8 @@
     <h3>Create Profile:</h3>
     <p>Username: {{ user.username }}</p>
     <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ profile_form | crispy }}
+        {% csrf_token %}
+        {{ profile_form | crispy }}
         <button type="submit" class="button" value="submit">Submit</button>
         {% endif %}
     </form>

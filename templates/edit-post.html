@@ -9,7 +9,8 @@
     <form action="{{ post.pk }}" method="post" enctype="multipart/form-data">
         {{ form | crispy }}
         {% csrf_token %}
-        <button type="submit" value="Save" class="button">Submit</button> <button class="button"><a href="{% url 'home' %}">Cancel</a></button>
+        <button type="submit" value="Save" class="button">Submit</button> <button class="button"><a
+                href="{% url 'home' %}">Cancel</a></button>
     </form>
     {% endif %}
 </div>

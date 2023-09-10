@@ -1,18 +1,18 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block content %}
 {% load crispy_forms_tags %}
 
-        <div>
-            {% if user.is_authenticated %}
-            <h3>Comment:</h3>
-            <p>Posting as: {{ user.username }}</p>
-            <form method="post" class="comment-form">
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="button" value="{{ post_comments.id }}">Submit</button>
-            </form>
-            {% endif %}
-        </div>
+<div>
+    {% if user.is_authenticated %}
+    <h3>Comment:</h3>
+    <p>Posting as: {{ user.username }}</p>
+    <form method="post" class="comment-form">
+        {{ comment_form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="button" value="{{ post_comments.id }}">Submit</button>
+    </form>
+    {% endif %}
+</div>
 
 
 {% endblock content %}
