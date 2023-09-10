@@ -1,8 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from django.views.generic.edit import UpdateView
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import UpdateView, DeleteView
 from .models import userPosts, postComments, User
 from .forms import CommentForm, UploadForm
 
@@ -58,7 +57,7 @@ class UploadPost(View):
 #  Edit a Post
 class EditPost(generic.UpdateView):
     model = userPosts
-    fields = ["header", "post_image", "category", "caption"]
+    fields = ["header", "post_image", "caption"]
     template_name = "edit-post.html"
     success_url = "/home"
 
@@ -101,6 +100,16 @@ class PostComment(View):
                 "comment_form": comment_form,
             },
         )
+
+# Categories View
+
+def CategoryView(request, subject):
+
+    post_subjects = userPosts.objects.filter(category=subject)
+
+    return render(request, 'game-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
+
+
 
 
 class PostSuperLike(View):

@@ -1,10 +1,6 @@
 from . import views
 from django.urls import path
-from .views import EditPost 
-from .views import DeletePost
-from .views import PostSuperLike
-from .views import PostUpVoted
-from .views import PostDownVoted
+from .views import EditPost, DeletePost, PostSuperLike, PostUpVoted, PostDownVoted, CategoryView
 
 
 urlpatterns = [
@@ -17,4 +13,5 @@ urlpatterns = [
     path('<int:pk>/super-vote', PostSuperLike.as_view(), name='super-vote'),
     path('<int:pk>/up-vote', PostUpVoted.as_view(), name='up-vote'),
     path('<int:pk>/down-vote', PostDownVoted.as_view(), name='down-vote'),
+    path('category/<str:subject>/', CategoryView, name='category'),
 ]

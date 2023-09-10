@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load cloudinary %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+{% if post_subjects %}
+<!-- Post Entries Column -->
+{% for post in post_subjects %}
+
+<div class="flex-ct">
+    <h2 class="profile-content"> {{ subject }} Categories</h2>
+    <div class="content">
+        <div>
+            <span class="post-stamp-left">{{ post.posted_on}}</span>
+            {% if post.creator == user %}
+            <span class="post-stamp-right"><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
+            <span class="post-stamp-right"><a href="{% url 'edit-post' post.pk %}">Edit</a></span>
+            {% endif %}
+        </div>
+        <div>
+            <img src="{{ post.post_image.url }}" class="post-img" alt="{{post.creator}}'s image of a miniature">
+        </div>
+        <div class="likes-container">
+            <span class="likes">
+                <strong>
+                    <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                                class="fa-solid fa-star fa-xl"></i></button>
+                        {% else %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                                class="fa-regular fa-star fa-xl"></i></button>
+                        {% endif %}
+                    </form>
+                    <span class="votes"> {{ post.total_super_vote }} </span>
+                </strong>
+            </span>
+            <span class="likes">
+                <strong>
+                    <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
+                        {% csrf_token %}
+                        {% if upVoted %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                                class="fa-solid fa-circle-arrow-up fa-xl"></i></button>
+                        {% else %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                                class="fa-solid fa-up-long fa-xl"></i></button>
+                        {% endif %}
+                    </form>
+                    <span class="votes"> {{ post.total_up_votes }} </span>
+                </strong>
+            </span>
+            <span class="likes">
+                <strong>
+                    <form class="d-inline" action="{% url 'down-vote' post.pk %}" method="POST">
+                        {% csrf_token %}
+                        {% if downVoted %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                                class="fa-solid fa-circle-arrow-down fa-xl"></i></button>
+                        {% else %}
+                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                                class="fa-solid fa-down-long fa-xl"></i></button>
+                        {% endif %}
+                    </form>
+                    <span class="votes"> {{ post.total_down_vote }} </span>
+            </span>
+            </strong>
+            </span>
+        </div>
+        <div>
+            <h3>
+                {{ post.header }}
+            </h3>
+            <h5>
+                {{ post.category }}
+            </h5>
+        </div>
+        <div class="user-title">
+            <h4>Posted by: <a href="{% url 'profile' post.creator.pk %}">{{ post.creator }}</a></h4>
+        </div>
+        <div>
+            <p>{{ post.caption }}</p>
+        </div>
+
+        <div>
+            <p class="d-inline-flex gap-1">
+                <a data-bs-toggle="collapse" href="#collapseExample{{ post.id }}" role="button" aria-expanded="false"
+                    aria-controls="collapseExample{{ post.id }}"> Show Comments</a>
+            </p>
+            <div class="collapse" id="collapseExample{{ post.id }}">
+                <div class="card">
+                    {% for comment in comments %}
+                    {% if comment.post_comments.id == post.id %}
+                    <br>
+                    <div>
+                        <span>{{ comment.name }}</span> <span>{{ comment.created_on }}</span>
+                    </div>
+                    <div>{{ comment.comment_body }}</div><br>
+                    {% endif %}
+                    {% empty %}
+                    <br>
+                    <span>
+                        <p>No Comments</p>
+                    </span>
+                    {% endfor %}
+                </div>
+                <button class="button"><a href="{% url 'post-comment' post.pk %}">Comment</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% else %}
+<div class="flex-ct">
+    <div class="category-content">
+        <h2> Category Empty </h2>
+        <br>
+        <h5>This category is empty or it does not exist.</h5><br>
+        <h5>If you would like to request a new catagory please email admin@minifolio.com.</h5><br>
+        <br>
+        <h4>If you believe there is an issue please email the support at support@minifolio.com.</h4>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

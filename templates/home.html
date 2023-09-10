@@ -63,6 +63,9 @@
             <h3>
             {{ post.header }}
             </h3>
+            <h5>
+                 <a href="{% url 'category' post.category %}"> {{ post.category }} </a>
+            </h5>
         </div>
         <div class="user-title">
             <h4>Posted by: <a href="{% url 'profile' post.creator.pk %}">{{ post.creator }}</a></h4>

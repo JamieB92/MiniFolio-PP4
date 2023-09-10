@@ -351,7 +351,7 @@ button a:hover {
 /* Profile */
 
 .profile-content {
-    width: 800px;
+    width: 1000px;
     padding: 30px 0 30px 0;
     text-align: center;
     border-style: solid;
@@ -367,7 +367,7 @@ button a:hover {
 }
 
 
-
+/* Delete View */
  .delete-content {
     width: 800px;
     padding: 100px;
@@ -377,6 +377,18 @@ button a:hover {
     border-color: rgb(51, 51, 51);
     margin: 10px;
  }
+
+ /* Categories View */
+
+ .category-content {
+    width: 1000px;
+    margin-top: 10%;
+    padding: 30px 0 30px 0;
+    text-align: center;
+    border-style: solid;
+    border-color: rgb(51, 51, 51);
+}
+
 
 /*    Media Querys       */
 

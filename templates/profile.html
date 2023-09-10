@@ -81,6 +81,10 @@
             </div>
             <div class="user-title">
                 <h4>Posted by: {{ post.creator }}</h4>
+                <br>
+                <h5>
+                    <a href="{% url 'category' post.category %}"> {{ post.category }} </a>
+               </h5>
             </div>
             <div>
                 <p>{{ post.caption }}</p>
