@@ -159,3 +159,16 @@ def CategoryView(request, subject):
 
     return render(request, 'specific-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
 
+
+# All Categories
+
+class AllCategories(generic.ListView):
+    model = userPosts
+    template_name = 'all-categories.html'
+    subject = category.objects.all()
+
+    def get_context_data(self, *args, **kwargs):
+        subject_menu = category.objects.all()
+        context = super(AllCategories, self).get_context_data(*args, **kwargs)
+        context["subject_menu"] = subject_menu
+        return context
