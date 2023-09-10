@@ -41,7 +41,7 @@ main {
     background-color: rgb(35, 35, 35);
     border-style: solid;
     border-color: rgb(51, 51, 51);
-    margin: 10px;
+    margin: 10px 10px 20px 10px;
 }
 
 /* Buttons */
@@ -70,6 +70,7 @@ button {
         box-shadow .3s linear,
         background-color .3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 
 .postbtn {
     position: relative;
