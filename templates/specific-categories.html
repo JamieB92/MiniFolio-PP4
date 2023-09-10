@@ -3,8 +3,14 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+
+<div class="flex-ct">
+    <div class="all-category-content">
+        <h2 class="profile-content"> {{ subject }} Categories</h2>
+    </div>
+</div>
+
 {% if post_subjects %}
-<!-- Post Entries Column -->
 {% for post in post_subjects %}
 
 <div class="flex-ct">
