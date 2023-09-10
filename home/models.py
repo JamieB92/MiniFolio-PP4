@@ -41,8 +41,6 @@ class userPosts(models.Model):
 
 class category(models.Model):
     title = models.CharField(max_length=200)
-    # title = models.ForeignKey(userPosts, on_delete=models.CASCADE,
-    #                                   related_name="category_title")
 
     def __str__(self):
         return self.title

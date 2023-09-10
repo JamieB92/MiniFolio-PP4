@@ -159,24 +159,3 @@ def CategoryView(request, subject):
 
     return render(request, 'specific-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
 
-# All Categories page
-
-# def CategoryView(request, subject):
-
-#     post_subjects = userPosts.objects.filter(category=subject)
-
-#     return render(request, 'game-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
-
-
-
-class AllCategoriesView(View):
-    def get(self, request):
-        categories = category.objects.order_by("-title")
-       
-        return render(
-            request, "all-categories.html",
-            {
-                "categories": categories,
-            }
-        )
-
