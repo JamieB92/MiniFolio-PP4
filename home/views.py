@@ -3,12 +3,9 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
-from .models import userPosts
-from .models import postComments
-from .forms import CommentForm
-from .forms import UploadForm
-from .forms import EditForm
-from .models import User
+from .models import userPosts, postComments, User
+from .forms import CommentForm, UploadForm
+
 
 # Landing Page
 class LandingPage(View):
@@ -61,7 +58,7 @@ class UploadPost(View):
 #  Edit a Post
 class EditPost(generic.UpdateView):
     model = userPosts
-    fields = ["header", "post_image", "caption"]
+    fields = ["header", "post_image", "category", "caption"]
     template_name = "edit-post.html"
     success_url = "/home"
 

@@ -5,12 +5,13 @@ from cloudinary.models import CloudinaryField
 
 # DB Model for User Posts
 class userPosts(models.Model):
-    header = models.CharField(max_length=100, unique=True)
+    header = models.CharField(max_length=100, unique=False)
     creator = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="creator_posts")
     posted_on = models.DateTimeField(auto_now_add=True)
     post_image = CloudinaryField('image')
     caption = models.TextField(max_length=500)
+    category = models.CharField(max_length=200, default='general')
     super_vote = models.ManyToManyField(
         User, related_name='post_super_votes', blank=True)
     up_vote = models.ManyToManyField(
@@ -25,7 +26,7 @@ class userPosts(models.Model):
     def __str__(self):
         return self.header
 
-    # Counts for Super, Up and Down Votes
+# Counts for Super, Up and Down Votes
 
     def total_up_votes(self):
         return self.up_vote.count()
@@ -35,6 +36,14 @@ class userPosts(models.Model):
 
     def total_down_vote(self):
         return self.down_vote.count()
+
+# Model for Categories
+
+class category(models.Model):
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
 
 # DB Model for posts comments
 
