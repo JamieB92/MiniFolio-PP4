@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView, DeleteView
-from .models import userPosts, postComments, User
+from .models import userPosts, postComments, User, category
 from .forms import CommentForm, UploadForm
 
 
@@ -101,16 +101,6 @@ class PostComment(View):
             },
         )
 
-# Categories View
-
-def CategoryView(request, subject):
-
-    post_subjects = userPosts.objects.filter(category=subject)
-
-    return render(request, 'game-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
-
-
-
 
 class PostSuperLike(View):
     
@@ -159,3 +149,34 @@ class PostDownVoted(View):
             posts.down_vote.add(request.user)
 
         return HttpResponseRedirect(reverse('home'))
+
+
+# Specific Categories View
+
+def CategoryView(request, subject):
+
+    post_subjects = userPosts.objects.filter(category=subject)
+
+    return render(request, 'specific-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
+
+# All Categories page
+
+# def CategoryView(request, subject):
+
+#     post_subjects = userPosts.objects.filter(category=subject)
+
+#     return render(request, 'game-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
+
+
+
+class AllCategoriesView(View):
+    def get(self, request):
+        categories = category.objects.order_by("-title")
+       
+        return render(
+            request, "all-categories.html",
+            {
+                "categories": categories,
+            }
+        )
+
