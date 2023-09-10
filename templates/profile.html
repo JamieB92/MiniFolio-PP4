@@ -7,8 +7,9 @@
 
         <div>
             <img src="{{ profile.profile_image.url }}" class="profile-image" alt="{{ profile.user }}'s profile photo">
+            <h2>{{ profile.user }}</h2> 
             {% if profile.user == user %}
-            <h2>{{ profile.user }}</h2> <a href="{% url 'edit-profile' profile.pk %}">Edit My Profile</a>
+            <a href="{% url 'edit-profile' profile.pk %}">Edit My Profile</a>
             {% endif %}
         </div>
         <br>
