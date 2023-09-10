@@ -340,6 +340,11 @@ button a:hover {
     margin-left: 10px;
 }
 
+.caption-body {
+    margin: 5%;
+}
+
+
 /* Posts Image */
 .post-img {
     max-height: 800px;
