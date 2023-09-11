@@ -36,16 +36,15 @@
         </div>
         <div class="likes-container">
             <div class="likes">
-                    <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
-                        {% csrf_token %}
-                        {% if liked %}
-                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                                class="fa-solid fa-star fa-xl"></i></button>
-                        {% else %}
-                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                                class="fa-regular fa-star fa-xl"></i></button>
-                        {% endif %}
-                    </form>
+                <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                            class="fa-solid fa-star fa-xl"></i></button>
+                    {% else %}
+                    <button type="submit" value="{{ post.pk }}" class="button-like"><i
+                            class="fa-regular fa-star fa-xl"></i></button>
+                    {% endif %}
                     <span class="votes"> {{ post.total_super_vote }} </span>
                     <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
                         {% csrf_token %}

@@ -15,7 +15,6 @@ class LandingPage(View):
 
 
 class UploadList(generic.ListView):
-
     def get(self, request):
         posts = userPosts.objects.order_by("-posted_on")
         comments = postComments.objects.order_by("-created_on")
@@ -59,23 +58,26 @@ class UploadPost(View):
             },
         )
 
-
 #  Edit a Post
+
+
 class EditPost(generic.UpdateView):
     model = userPosts
     fields = ["header", "post_image", "caption"]
     template_name = "edit-post.html"
     success_url = "/home"
 
-
 # Delete A Post
+
+
 class DeletePost(DeleteView):
     model = userPosts
     success_url = "/home"
     template_name = "delete-post.html"
 
-
 # Post a comment to a post
+
+
 class PostComment(View):
 
     def get(self, request, pk):
