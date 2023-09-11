@@ -10,7 +10,7 @@
     <form method="post" class="comment-form">
         {{ comment_form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="button" value="{{ post_comments.id }}">Submit</button>
+        <button type="submit" class="button" value="{{ post_comments.id }}">Submit</button> <a href="{% url 'home' %}">Cancel</a>
     </form>
 </div>
 {% else %}

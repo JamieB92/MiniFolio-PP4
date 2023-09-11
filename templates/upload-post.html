@@ -9,9 +9,12 @@
     <form method="post" enctype="multipart/form-data">
         {{ upload_form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="button">Submit</button> <button class="button"><a href="{% url 'home' %}">Cancel</a></button>
-
+        <button type="submit" class="button">Submit</button> <a href="{% url 'home' %}">Cancel</a>
     </form>
+
+    
+
+
     {% else %}
     <div class="flex-ct">
         <div class="category-content">
