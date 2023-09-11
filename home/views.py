@@ -11,8 +11,11 @@ class LandingPage(View):
     def get(self, request):
         return render(request, "index.html")
 
-# Home page that shows all posts uploaded by users 
+# Home page that shows all posts uploaded by users
+
+
 class UploadList(generic.ListView):
+
     def get(self, request):
         posts = userPosts.objects.order_by("-posted_on")
         comments = postComments.objects.order_by("-created_on")
@@ -25,7 +28,9 @@ class UploadList(generic.ListView):
             }
         )
 
-# Create a new post 
+# Create a new post
+
+
 class UploadPost(View):
 
     def get(self, request):
@@ -54,6 +59,7 @@ class UploadPost(View):
             },
         )
 
+
 #  Edit a Post
 class EditPost(generic.UpdateView):
     model = userPosts
@@ -61,13 +67,15 @@ class EditPost(generic.UpdateView):
     template_name = "edit-post.html"
     success_url = "/home"
 
+
 # Delete A Post
 class DeletePost(DeleteView):
     model = userPosts
     success_url = "/home"
     template_name = "delete-post.html"
 
-# Post a comment to a post 
+
+# Post a comment to a post
 class PostComment(View):
 
     def get(self, request, pk):
@@ -103,7 +111,7 @@ class PostComment(View):
 
 
 class PostSuperLike(View):
-    
+
     def post(self, request, pk):
         posts = userPosts.objects.get(id=pk)
         user = User.objects.get(id=request.user.id)
@@ -119,7 +127,7 @@ class PostSuperLike(View):
 
 
 class PostUpVoted(View):
-    
+
     def post(self, request, pk):
         posts = userPosts.objects.get(id=pk)
         user = User.objects.get(id=request.user.id)
@@ -134,9 +142,8 @@ class PostUpVoted(View):
         return HttpResponseRedirect(reverse('home'))
 
 
-
 class PostDownVoted(View):
-    
+
     def post(self, request, pk):
         posts = userPosts.objects.get(id=pk)
         user = User.objects.get(id=request.user.id)
@@ -157,7 +164,8 @@ def CategoryView(request, subject):
 
     post_subjects = userPosts.objects.filter(category=subject)
 
-    return render(request, 'specific-categories.html', {'subject':subject.title(), 'post_subjects':post_subjects})
+    return render(request, 'specific-categories.html',
+                  {'subject': subject.title(), 'post_subjects': post_subjects})
 
 
 # All Categories
