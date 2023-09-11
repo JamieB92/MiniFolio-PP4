@@ -20,7 +20,7 @@ class UploadList(generic.ListView):
         comments = postComments.objects.order_by("-created_on")
         return render(
             request, "home.html",
-            {   
+            {
                 "posts": posts,
                 "comments": comments,
             }
@@ -111,6 +111,7 @@ class PostComment(View):
         )
 # Likes
 
+
 def PostSuperLike(request, pk):
 
     post = get_object_or_404(userPosts, id=request.POST.get('super_id'))
@@ -132,6 +133,7 @@ def PostDownVoted(request, pk):
     return redirect('home')
 
 # Specific Categories View
+
 
 def CategoryView(request, subject):
 
