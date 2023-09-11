@@ -23,34 +23,23 @@
             <div class="likes">
                 <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
                     {% csrf_token %}
-                    {% if liked %}
-                    <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                            class="fa-solid fa-star fa-xl"></i></button>
-                    {% else %}
-                    <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                            class="fa-regular fa-star fa-xl"></i></button>
-                    {% endif %}
+                    <button type="submit" name="super_id" value="{{ post.id }}" class="button-like">
+                        <i class="fa-solid fa-star fa-xl"></i>
+                    </button>
+                </form>
                     <span class="votes"> {{ post.total_super_vote }} </span>
                     <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
                         {% csrf_token %}
-                        {% if upVoted %}
-                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                                class="fa-solid fa-circle-arrow-up fa-xl"></i></button>
-                        {% else %}
-                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                                class="fa-solid fa-up-long fa-xl"></i></button>
-                        {% endif %}
+                        <button type="submit" name="up_id" value="{{ post.pk }}" class="button-like">
+                            <i class="fa-solid fa-circle-arrow-up fa-xl"></i>
+                        </button>
                     </form>
                     <span class="votes"> {{ post.total_up_votes }} </span>
                     <form class="d-inline" action="{% url 'down-vote' post.pk %}" method="POST">
                         {% csrf_token %}
-                        {% if downVoted %}
-                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                                class="fa-solid fa-circle-arrow-down fa-xl"></i></button>
-                        {% else %}
-                        <button type="submit" value="{{ post.pk }}" class="button-like"><i
-                                class="fa-solid fa-down-long fa-xl"></i></button>
-                        {% endif %}
+                        <button type="submit" name="down_id" value="{{ post.pk }}" class="button-like">
+                            <i class="fa-solid fa-circle-arrow-down fa-xl"></i>
+                        </button>
                     </form>
                     <span class="votes"> {{ post.total_down_vote }} </span>
             </div>        

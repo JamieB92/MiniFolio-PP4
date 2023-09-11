@@ -18,10 +18,9 @@ class UploadList(generic.ListView):
     def get(self, request):
         posts = userPosts.objects.order_by("-posted_on")
         comments = postComments.objects.order_by("-created_on")
-
         return render(
             request, "home.html",
-            {
+            {   
                 "posts": posts,
                 "comments": comments,
             }
@@ -110,55 +109,27 @@ class PostComment(View):
                 "comment_form": comment_form,
             },
         )
+# Likes
+
+def PostSuperLike(request, pk):
+
+    post = get_object_or_404(userPosts, id=request.POST.get('super_id'))
+    post.super_vote.add(request.user)
+    return redirect('home')
 
 
-class PostSuperLike(View):
+def PostUpVoted(request, pk):
 
-    def post(self, request, pk):
-        posts = userPosts.objects.get(id=pk)
-        user = User.objects.get(id=request.user.id)
-
-        liked = userPosts.objects.filter(super_vote__id__in=[user.id])
-
-        if liked:
-            posts.super_vote.remove(request.user)
-        else:
-            posts.super_vote.add(request.user)
-
-        return HttpResponseRedirect(reverse('home'))
+    post = get_object_or_404(userPosts, id=request.POST.get('up_id'))
+    post.up_vote.add(request.user)
+    return redirect('home')
 
 
-class PostUpVoted(View):
+def PostDownVoted(request, pk):
 
-    def post(self, request, pk):
-        posts = userPosts.objects.get(id=pk)
-        user = User.objects.get(id=request.user.id)
-
-        upVoted = userPosts.objects.filter(up_vote__id__in=[user.id])
-
-        if upVoted:
-            posts.up_vote.remove(request.user)
-        else:
-            posts.up_vote.add(request.user)
-
-        return HttpResponseRedirect(reverse('home'))
-
-
-class PostDownVoted(View):
-
-    def post(self, request, pk):
-        posts = userPosts.objects.get(id=pk)
-        user = User.objects.get(id=request.user.id)
-
-        downVoted = userPosts.objects.filter(down_vote__id__in=[user.id])
-
-        if downVoted:
-            posts.down_vote.remove(request.user)
-        else:
-            posts.down_vote.add(request.user)
-
-        return HttpResponseRedirect(reverse('home'))
-
+    post = get_object_or_404(userPosts, id=request.POST.get('down_id'))
+    post.down_vote.add(request.user)
+    return redirect('home')
 
 # Specific Categories View
 
