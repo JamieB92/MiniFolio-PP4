@@ -37,3 +37,60 @@ The "Editing and Deleting my Miniatures" epic empowers users with control over t
 The "Responsive Design" epic focuses on optimizing the MiniFolio website for various devices and screen sizes. This includes implementing responsive design principles to ensure that users can seamlessly access and interact with the platform from desktops, laptops, tablets, and smartphones. A responsive design enhances user experience, making the website accessible and visually appealing across devices.
 
 Together, these six epics contribute to the creation of MiniFolio as an engaging and community-driven platform for miniature enthusiasts, providing a space to display, appreciate, and interact with board game and Warhammer miniatures.
+
+
+## Testing 
+
+### Creating an Account
+
+
+* Is the user directed to the registration form upon clicking the "Register" button?
+   * Yes, clicking the Register button successfully navigates the user to the registration form.
+   * I have tested this by clicking on the Register button.
+
+
+* Can the user input their registration details?
+    * Yes, the user is able to enter their registration details successfully.
+    * I have tested this by adding details to the form
+
+
+* Does clicking the Sign up button after entering details redirect the user to the profile creation page?
+   * Yes, clicking the Sign up button after entering details takes the user to the profile creation page.
+   * I have tested this by clicking the Sign up button
+
+
+* Can the user upload a profile photo during profile creation?
+   * Yes, the user can successfully upload a profile photo.
+   * I have tested this by adding a image from my phone and computer
+
+
+* Can the user include a bio in their profile?
+   * Yes, the user can successfully add a bio to their profile.
+   * I have tested this by entering a bio
+
+
+* Is the user directed to the home page after clicking the Submit button on the profile creation page?
+   * Yes, clicking the Submit button on the profile creation page successfully navigates the user to the home page.
+   * I have tested this 
+
+### Creating a Post
+
+* Is the user directed to the post form upon clicking the Create link and icon.
+    * Yes, clicking the "Create" button successfully navigates the user to the post form.
+    * I have tested this by clicking on the "Create" button.
+
+
+* Can enter header, image, category, and caption.
+
+    * Yes, the user can enter the header, image, category, and caption successfully.
+    * I have tested this by entering the respective details into the form.
+
+
+* User clicks "Post" and posts image, then redirects home, and can see the post in the home view.
+
+    * Yes, when the user clicks the "Post" button, the image is posted, and the user is redirected to the home page where they can see the post.
+    * I have tested this by posting an image and verifying its presence in the home view.
+    * The user can also see the post in a specific category and in their profile.
+
+
+
