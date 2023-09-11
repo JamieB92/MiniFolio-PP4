@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView, DeleteView
-from django.db.models import Count, Q
 from .models import userPosts, postComments, User, category
 from .forms import CommentForm, UploadForm
 
@@ -18,16 +17,8 @@ class LandingPage(View):
 class UploadList(generic.ListView):
 
     def get(self, request):
-
+        posts = userPosts.objects.order_by("-posted_on")
         comments = postComments.objects.order_by("-created_on")
-        posts = userPosts.objects.annotate(
-            upvoted_by_user=Count
-            ('up_vote', filter=Q(up_vote=request.user)),
-            downvoted_by_user=Count
-            ('down_vote', filter=Q(down_vote=request.user)),
-            supervoted_by_user=Count
-            ('super_vote', filter=Q(super_vote=request.user))
-            ).order_by('-posted_on')
 
         return render(
             request, "home.html",
@@ -171,14 +162,7 @@ class PostDownVoted(View):
 
 def CategoryView(request, subject):
 
-    post_subjects = userPosts.objects.annotate(
-        upvoted_by_user=Count
-        ('up_vote', filter=Q(up_vote=request.user)),
-        downvoted_by_user=Count
-        ('down_vote', filter=Q(down_vote=request.user)),
-        supervoted_by_user=Count
-        ('super_vote', filter=Q(super_vote=request.user))
-        ).filter(category=subject).order_by('-posted_on')
+    post_subjects = userPosts.objects.filter(category=subject)
 
     return render(request, 'specific-categories.html',
                   {'subject': subject.title(), 'post_subjects': post_subjects})
