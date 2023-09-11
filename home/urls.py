@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
-from .views import EditPost, DeletePost, PostSuperLike, PostUpVoted, PostDownVoted
-from .views import CategoryView, AllCategories
+from .views import EditPost, DeletePost, PostSuperLike, PostUpVoted
+from .views import CategoryView, AllCategories, , PostDownVoted
 
 
 urlpatterns = [
