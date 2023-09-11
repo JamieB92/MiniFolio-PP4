@@ -39,6 +39,7 @@ class userPosts(models.Model):
 
 # Model for Categories
 
+
 class category(models.Model):
     title = models.CharField(max_length=200)
 

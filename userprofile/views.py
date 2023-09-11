@@ -9,12 +9,12 @@ from .forms import EditProfile
 
 
 class UserProfile(ListView):
-    
-    def get(self,request, pk):
+
+    def get(self, request, pk):
         profile = userProfiles.objects.get(user=pk)
         myposts = userPosts.objects.order_by("-posted_on")
         return render(
-            request, 'profile.html', 
+            request, 'profile.html',
             {
                 'profile': profile,
                 'myposts': myposts,
@@ -23,8 +23,8 @@ class UserProfile(ListView):
 
 
 class CreateUserProfile(CreateView):
-      
-      def get(self, request):
+
+    def get(self, request):
         profile_form = ProfileForm(data=request.POST)
         return render(
             request,
@@ -34,8 +34,7 @@ class CreateUserProfile(CreateView):
             },
         )
 
-
-      def post(self, request):
+    def post(self, request):
         profile_form = ProfileForm(request.POST, request.FILES)
         if profile_form.is_valid():
             profile = profile_form.save(commit=False)
@@ -50,7 +49,6 @@ class CreateUserProfile(CreateView):
                 "profile_form": profile_form,
             },
         )
-
 
 
 class EditMyProfile(UpdateView):

@@ -19,6 +19,7 @@ class CommentsAdmin(admin.ModelAdmin):
     list_display = ('name', 'created_on', 'comment_body', 'post_comments')
     list_filter = ('created_on',)
 
+
 @admin.register(category)
 class CategoriesAdmin(admin.ModelAdmin):
 
