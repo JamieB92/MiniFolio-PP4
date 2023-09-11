@@ -20,8 +20,8 @@
             <img src="{{ post.post_image.url }}" class="post-img" alt="{{post.creator}}'s image of a miniature">
         </div>
         <div class="likes-container">
-            <span class="likes">
-                <strong>
+            <div class="likes">
+
                     <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
@@ -33,10 +33,6 @@
                         {% endif %}
                     </form>
                     <span class="votes"> {{ post.total_super_vote }} </span>
-                </strong>
-            </span>
-            <span class="likes">
-                <strong>
                     <form class="d-inline" action="{% url 'up-vote' post.pk %}" method="POST">
                         {% csrf_token %}
                         {% if upVoted %}
@@ -48,10 +44,6 @@
                         {% endif %}
                     </form>
                     <span class="votes"> {{ post.total_up_votes }} </span>
-                </strong>
-            </span>
-            <span class="likes">
-                <strong>
                     <form class="d-inline" action="{% url 'down-vote' post.pk %}" method="POST">
                         {% csrf_token %}
                         {% if downVoted %}
@@ -63,9 +55,7 @@
                         {% endif %}
                     </form>
                     <span class="votes"> {{ post.total_down_vote }} </span>
-            </span>
-            </strong>
-            </span>
+            </div>        
         </div>
         <div>
             <h3>
@@ -99,12 +89,12 @@
                     {% endif %}
                     {% empty %}
                     <br>
-                    <span>
+                    <div>
                         <p>No Comments</p>
-                    </span>
+                    </div>
                     {% endfor %}
                 </div>
-                <button class="button"><a href="{% url 'post-comment' post.pk %}">Comment</a></button>
+                <form action="{% url 'post-comment' post.pk %}"><button class="button">Comment</button></form>
             </div>
         </div>
     </div>
