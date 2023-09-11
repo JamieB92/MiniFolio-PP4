@@ -21,7 +21,6 @@
         </div>
         <div class="likes-container">
             <div class="likes">
-
                     <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
