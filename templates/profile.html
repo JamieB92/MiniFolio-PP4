@@ -4,8 +4,7 @@
 
 {% if user.is_authenticated %}
 <div class="flex-ct">
-    <div lass="profile-content">
-
+    <div class="profile-content">
         <div>
             <img src="{{ profile.profile_image.url }}" class="profile-image" alt="{{ profile.user }}'s profile photo">
             <h2>{{ profile.user }}</h2> 
@@ -126,9 +125,7 @@
             {% endif %}
         </div>
     </div>
-
 {% endfor %}
-
 {% else %}
 <div class="flex-ct">
     <div class="category-content">
@@ -143,5 +140,4 @@
     </div>
 </div>
 {% endif %}
-
 {% endblock %}
