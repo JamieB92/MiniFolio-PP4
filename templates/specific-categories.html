@@ -71,24 +71,20 @@
                     aria-controls="collapseExample{{ post.id }}"> Show Comments</a>
             </p>
             <div class="collapse" id="collapseExample{{ post.id }}">
-                <div class="card">
-                    {% for comment in comments %}
-                    {% if comment.post_comments.id == post.id %}
-                    <br>
-                    <div>
-                        <span>{{ comment.name }}</span> <span>{{ comment.created_on }}</span>
+                <div class="collapse" id="collapseExample{{ post.id }}">
+                    <div class="card">
+                        {% for comment in comments %}
+                        {% if comment.post_comments.id == post.id %}
+                        <br>
+                        <div>
+                            <span>{{ comment.name }}</span> <span>{{ comment.created_on }}</span>
+                        </div>
+                        <div>{{ comment.comment_body }}</div><br>
+                        {% endif %}
+                        {% endfor %}
+                        <form action="{% url 'post-comment' post.pk %}"><button class="button">Comment</button></form>
                     </div>
-                    <div>{{ comment.comment_body }}</div><br>
-                    {% endif %}
-                    {% empty %}
-                    <br>
-                    <div>
-                        <p>No Comments</p>
-                    </div>
-                    {% endfor %}
                 </div>
-                <form action="{% url 'post-comment' post.pk %}"><button class="button">Comment</button></form>
-            </div>
         </div>
     </div>
 </div>
