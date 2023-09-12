@@ -16,7 +16,6 @@ The site also provides a seamless and intuitive user experience. It is designed 
 
 The "Basic Setup" epic involves the foundational steps to prepare the MiniFolio platform for users. This includes configuring the essential infrastructure and database components necessary to support the core functionalities. Basic setup sets the stage for user engagement and the seamless display of board game and Warhammer miniatures.
 
-### User Story
 
 #### Initial Implentation setup:
 
@@ -467,6 +466,23 @@ Together, these 5 epics contribute to the creation of MiniFolio as an engaging a
     * I have tested this by clicking on category links within various posts.
 
 ### Validator Testing
+
+* Lighthouse Testing: <br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/5d09756e-3951-4015-be32-ed7f66b72035)
+
+* W3 Validator :
+Because of the Django templating language code integrated into the HTML files, they cannot be directly copied and pasted into the validator.
+Additionally, secured views, which include pages requiring login or have restricted access, cannot undergo validation via direct URI entry.
+
+To validate these files, you can follow these steps:
+
+* Open the page you wish to validate.
+* Right-click and select "View Page Source." This will display the raw HTML code.
+* Copy the raw HTML code.
+* Paste this code into the validator. This will ensure that only the HTML rendered code is validated. 
+
+
 
 ## Deployment:
 
