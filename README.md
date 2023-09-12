@@ -159,14 +159,14 @@ This epic and story was built around a user being able to upload a post to Minif
 The main core objectives were to allow the user to upload a photo and add a captions to them. 
 The user can initiate the upload with the upload button in the footer: <br>
 
-<br>
+
 ![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/7597739b-b53f-4c3c-83cc-e64c7fcc6b67)
 
 Or click Create in the Nav:
 
 ![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/cad1a1e7-3b48-4c1d-86f5-a16056d542b8)
 
-This will then take them to the pload form where the user can create a header, upload an image, select a category and write a catpion for the post.
+This will then take them to the pload form where the user can create a header, upload an image, select a category and write a caption for the post.
 
 ![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/9a448312-a160-4689-93f2-bf801e115a01)
 
