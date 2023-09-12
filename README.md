@@ -179,6 +179,51 @@ Once the post has been created they then are directed to the home page where the
 
 Within the "Interacting with Miniatures" epic, the focus shifts to user engagement. Users are granted the ability to view, comment on, and like posts by fellow enthusiasts. These interactive features foster a sense of community, allowing users to connect, provide feedback, and appreciate the miniature artistry of others.
 
+#### View a Game Specific Category
+
+As a **user** I can **search for game specific category's** so that **I can search look at specific miniatures**
+
+**Acceptance Criteria**
+
+- User is able to see category based posts
+- Create a category's page
+
+When a user is creating a post the have to select a category for the post to go into. 
+The posts the all link together and the users are able to go to the categorys page and look at posts in that one category. 
+The user also cal click the category on the post and this will dircet the to that category. <br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/b0013b24-c302-404d-9a4d-35073f8c704b)
+
+<br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/2baa10e3-912c-4c59-bb10-ee2d954a3225)
+<br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/d91fc9b9-7ad0-44b4-9fcf-8e82a09434f2)
+
+#### Commenting on Posts
+
+As a **user** I can **comment on posts**  so that **I can interact with posts and the community**.
+
+**Acceptance Criteria:**
+
+- Users can write and submit comments on posts.
+- Comments should be displayed with the author's name
+
+
+Users are able to interact with each other by commenting on each others posts. 
+They are able to do this by clicking on the Show Comments drop down link which revealse the comment button 
+<br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/91fe1f1f-6aee-4309-b187-a15d97555af2)
+
+For the user to post a comment they need to click the comment buttong which will take them to the comment form where they can create their comment, <br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/d7be034c-eda0-4515-9f76-c0acfe7000b2)
+
+This will then display on the post. 
+
+
 
 
 **Epic 5: Editing and Deleting my Miniatures**
