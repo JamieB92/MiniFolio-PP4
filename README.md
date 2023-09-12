@@ -123,13 +123,55 @@ The login auithentication used for this was Allauth.
 ![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/4c7c140b-e8e8-4878-b8aa-36ee3a05811b)
 
 
-### User Story
 
 **Epic 3: Displaying Miniatures**
 
 The "Displaying Miniatures" epic revolves around enabling users to showcase their board game and Warhammer miniatures. This involves building the functionality for users to upload images, add titles and descriptions. The epic emphasizes creating an appealing and organized display for users' miniature collections.
 
-### User Story
+#### Viewing Posts
+
+As a **user** I can **view other users posts** so that **I can view images and details of posts**
+
+**Acceptance Criteria:**
+
+- Users can see a feed of posts from other users.
+- Each post displays the image, description, and author information.
+
+#### Adding Captions to Posts
+
+As a **developer** I want users **to add a description to their post**  so that **they can describe and instruct others**.
+
+**Acceptance Criteria:**
+
+- Users can enter a text caption for each post.
+- Captions should only be a 500 characters long.
+
+#### Image Upload
+
+As a **developer** I want to **enable users to upload images**  so that **they can showcase their miniatures**
+
+**Acceptance Criteria:**
+- Users can upload image files.
+- Uploaded images should be properly stored and associated with the user's account.
+
+
+This epic and story was built around a user being able to upload a post to Minifolio.
+The main core objectives were to allow the user to upload a photo and add a captions to them. 
+The user can initiate the upload with the upload button in the footer: <br>
+
+<br>
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/7597739b-b53f-4c3c-83cc-e64c7fcc6b67)
+
+Or click Create in the Nav:
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/cad1a1e7-3b48-4c1d-86f5-a16056d542b8)
+
+This will then take them to the pload form where the user can create a header, upload an image, select a category and write a catpion for the post.
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/9a448312-a160-4689-93f2-bf801e115a01)
+
+
+
 
 **Epic 4: Interacting with Miniatures**
 
