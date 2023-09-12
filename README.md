@@ -155,7 +155,7 @@ As a **developer** I want to **enable users to upload images**  so that **they c
 - Uploaded images should be properly stored and associated with the user's account.
 
 
-This epic and story was built around a user being able to upload a post to Minifolio.
+This epic and story was built around a user being able to upload a post to Minifolio and view other peoples posts.
 The main core objectives were to allow the user to upload a photo and add a captions to them. 
 The user can initiate the upload with the upload button in the footer: <br>
 
@@ -170,14 +170,16 @@ This will then take them to the pload form where the user can create a header, u
 
 ![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/9a448312-a160-4689-93f2-bf801e115a01)
 
+Once the post has been created they then are directed to the home page where they will see everyones posts. <br>
 
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/334bfe1a-5fc0-41f4-8531-02d6240486aa)
 
 
 **Epic 4: Interacting with Miniatures**
 
 Within the "Interacting with Miniatures" epic, the focus shifts to user engagement. Users are granted the ability to view, comment on, and like posts by fellow enthusiasts. These interactive features foster a sense of community, allowing users to connect, provide feedback, and appreciate the miniature artistry of others.
 
-### User Story
+
 
 **Epic 5: Editing and Deleting my Miniatures**
 
