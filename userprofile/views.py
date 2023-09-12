@@ -3,6 +3,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
 from .models import userPosts
+from .models import postComments
 from .models import userProfiles
 from .forms import ProfileForm
 from .forms import EditProfile

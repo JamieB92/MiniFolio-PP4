@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from home.models import userPosts
+from home.models import postComments
 
 
 class userProfiles(models.Model):

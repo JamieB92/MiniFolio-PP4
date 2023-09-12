@@ -74,14 +74,9 @@
                     </div>
                     <div>{{ comment.comment_body }}</div><br>
                     {% endif %}
-                    {% empty %}
-                    <br>
-                    <div>
-                        <p>No Comments</p>
-                    </div>
                     {% endfor %}
+                    <form action="{% url 'post-comment' post.pk %}"><button class="button">Comment</button></form>
                 </div>
-                <form action="{% url 'post-comment' post.pk %}"><button class="button">Comment</button></form>
             </div>
         </div>
     </div>
