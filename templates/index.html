@@ -2,6 +2,7 @@
 {% load cloudinary %}
 {% block content %}
 <section>
+    <!-- Logo Section -->
     <div class="container title-container">
         <div class="row">
             <div class="col">
@@ -13,6 +14,7 @@
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col">
+                <!-- Login And Register Buttons -->
                 <form action="{% url 'account_login' %}"><button class="button">Sign In</button></form>
                 <form action="{% url 'account_signup' %}"><button class="button">Register</button></form>
             </div>
@@ -20,6 +22,7 @@
     </div>
 </section>
 <section>
+    <!-- About MiniFolio -->
     <div class="landing-flex-ct">
         <div class="about">
             <h2>What is MiniFolio?</h2>
@@ -37,7 +40,7 @@
                 the small, where every miniature finds its voice. Welcome to Minifolio, Share, Inspire and Connect.
             </p>
         </div>
-
+        <!-- Landing Page Carousel -->
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -84,6 +87,7 @@
     </div>
 </section>
 <section>
+    <!-- Reasons to Join -->
     <div class="landing-flex-ct">
         <div class="about">
             <h2>Why Join MiniFolio?</h2>
@@ -99,6 +103,7 @@
                 <li> Celebrate Every Detail: In the world of miniatures, every brushstroke tells a story. Join Minifolio to share yours.</li>
             </ul>
             <h4><b>Join Minifolio today and let your miniatures shine!</b></h4>
+            <!-- Register Button -->
             <form action="{% url 'account_signup' %}"><button class="button">Register</button></form>
         </div>
     </div>

@@ -10,6 +10,7 @@
 <div class="flex-ct">
     <div class="content">
         <div>
+            <!-- User Auth to edite post or not -->
             <span class="post-stamp-left">{{ post.posted_on}}</span>
             {% if post.creator == user %}
             <span class="post-stamp-right"><a href="{% url 'delete-post' post.pk %}">Delete</a></span>
@@ -17,8 +18,10 @@
             {% endif %}
         </div>
         <div>
+            <!-- Post Image -->
             <img src="{{ post.post_image.url }}" class="post-img" alt="{{post.creator}}'s image of a miniature">
         </div>
+        <!-- Post Like Buttons -->
         <div class="likes-container">
             <div class="likes">
                 <form class="d-inline" action="{% url 'super-vote' post.pk %}" method="POST">
@@ -44,6 +47,7 @@
                     <span class="votes"> {{ post.total_down_vote }} </span>
             </div>        
         </div>
+        <!-- Post Content -->
         <div>
             <h3>
                 {{ post.header }}
@@ -58,7 +62,7 @@
         <div class="caption-body">
             <p>{{ post.caption }}</p>
         </div>
-
+        <!-- Post Comments -->
         <div>
             <p class="d-inline-flex gap-1">
                 <a data-bs-toggle="collapse" href="#collapseExample{{ post.id }}" role="button" aria-expanded="false"
@@ -85,13 +89,11 @@
 {% else %}
 <div class="flex-ct">
     <div class="category-content">
+        <!-- Do not have access message -->
         <h2> YOU DO NOT HAVE ACCESS </h2>
-        <br>
         <h5>You are seeing this as you are not logged in or do not have an account.</h5><br>
         <h5>Please login <a href="{% url 'account_login' %}">Here</a></h5><br>
         <h5>If you do not have an account please register for one <a href="{% url 'account_signup' %}">Here</a></h5>
-        <br>
-        <br>
         <h4>If you believe there is an issue with your account, please email support at support@minifolio.com.</h4>
     </div>
 </div>
