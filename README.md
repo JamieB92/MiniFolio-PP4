@@ -172,3 +172,59 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
     * Yes the user is able to see only posts by that creator. 
 
 
+### Commenting on a post
+
+* Is the user able to click "Show Comments" in a post?
+    * Yes, the user is able to click "Show Comments" in a post.
+    * I have tested this by clicking on the "Show Comments" button within a post.
+
+
+* Does the dropdown work and show comments if there are any?
+    * Yes, the dropdown works and shows comments if there are any.
+    * I have tested this by clicking on the dropdown icon and verifying that comments are displayed when available.
+
+* Is the user able to post a comment?
+    * Yes, the user is able to post a comment.
+    * I have tested this by clicking the "Comment" button within the post.
+
+* Is the user directed to the comment form after clicking the "Comment" button?
+    * Yes, the user is directed to the comment form after clicking the "Comment" button.
+    * I have tested this by clicking the "Comment" button and confirming that the comment form is displayed.
+
+* Is there an option to cancel the comment and return to the home page?
+    * Yes, there is an option to cancel the comment and return to the home page.
+    * I have tested this by clicking the "Cancel" link within the comment form and confirming that it takes the user back to the home page.
+
+### Superlike, Upvote, and Downvote
+
+* Can the user superlike a post?
+    * Yes, the user can superlike a post successfully.
+    * I have tested this by clicking the superlike button on a post.
+  
+* Can the user upvote a post?
+    * Yes, the user can upvote a post successfully.
+    * I have tested this by clicking the upvote button on a post.
+
+* Can the user downvote a post?
+    * Yes, the user can downvote a post successfully.
+    * I have tested this by clicking the downvote button on a post.
+
+* Can a user unlike a post? 
+    * Currently not, this was due to problems during development building this feature.
+    * I will be looking to implement in the next availble sprint.
+
+
+### Categories
+
+* Can the user view different board game categories?
+    * Yes, the user can view different board game categories.
+    * I have tested this by clicking on each category.
+
+* Do all the related posts display when clicking on a category?
+    * Yes, when clicking on a board game category, all related posts are displayed.
+    * I have tested this by selecting different categories and verifying the post listings.
+
+* Can the user access a category by clicking the link in a post?
+    * Yes, the user can access a category by clicking the link in a post.
+    * I have tested this by clicking on category links within various posts.
+
