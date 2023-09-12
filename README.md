@@ -284,6 +284,15 @@ Once they have clicked that they will be taken to a confimation page where they 
 Together, these 5 epics contribute to the creation of MiniFolio as an engaging and community-driven platform for miniature enthusiasts, providing a space to display, appreciate, and interact with board game and Warhammer miniatures.
 
 
+
+### Kanban Board:
+
+You can look at all the Minifolio Stories <a class="https://github.com/users/JamieB92/projects/4">here.<a/> <br>
+
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/86b4d376-0d92-4aee-9151-e19c1da529d3)
+
+
 ### Layout & Design:
 
 Minifolio was built mobile first but is responsive on all devices.
@@ -310,6 +319,17 @@ Profile and Posts: <br>
 
 
 ## Testing 
+
+### Responsive Testing Devices: 
+* Iphone 13ProMax
+* Ipad
+* Asus Laptop
+* Monitor 27inch
+
+### Browser testing
+* Safari - Iphone and Ipad
+* Google - Iphone, Ipad, Laptop, Pc
+* Firefox - Iphone and PC 
 
 ### Creating an Account
 
