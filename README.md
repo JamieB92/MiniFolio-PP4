@@ -246,7 +246,19 @@ The like function works and adds to the tally which covers this story but it has
 
 The "Editing and Deleting my Miniatures" epic empowers users with control over their showcased content. Users can edit post details such as titles and descriptions to reflect their growth and refinement as miniature artists. Additionally, users can opt to delete posts that no longer align with their preferences or skill levels, ensuring the quality of their showcased portfolio.
 
-### User Story
+#### Editing Posts
+
+As a **user** I can **edit my post** so that **I can update my posts**
+
+**Acceptance Criteria:**
+- Users can edit the title and description fields of their own posts.
+- Changes are saved and reflected in the post details.
+
+The user is able to edit their posts by clicking the edit link in the post, this takes the user to the edit for where they can edit there post.  <br>
+
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/b0fd0782-3f48-4d1c-9306-286348ff7750)
+
 
 
 
