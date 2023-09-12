@@ -4,7 +4,7 @@ Welcome to MiniFolio, an online platform that brings together the vibrant worlds
 
 ## Site-Goals
 
-The primary goal of the site is to empower users to proudly showcase their meticulously painted board game miniatures and Warhammer creations. 
+The primary goal of the site is to empower users to proudly showcase their meticulously painted board game miniatures and Warhammer creations.
 
 It also aims to create a space where artists of all skill levels can display their work and receive recognition for their dedication and creativity.
 
@@ -65,7 +65,7 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
 
 * Is the user directed to the home page after clicking the Submit button on the profile creation page?
    * Yes, clicking the Submit button on the profile creation page successfully navigates the user to the home page.
-   * I have tested this 
+   * I have tested this.
 
 ### Edit Profile
 
@@ -169,7 +169,7 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
     * I have tested this by clicking on anothers creator's name in a post.
 
 * Is the user able to see all posts by that Creator?
-    * Yes the user is able to see only posts by that creator. 
+    * Yes the user is able to see only posts by that creator.
 
 
 ### Commenting on a post
@@ -209,7 +209,7 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
     * Yes, the user can downvote a post successfully.
     * I have tested this by clicking the downvote button on a post.
 
-* Can a user unlike a post? 
+* Can a user unlike a post?
     * Currently not, this was due to problems during development building this feature.
     * I will be looking to implement in the next availble sprint.
 
@@ -228,3 +228,81 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
     * Yes, the user can access a category by clicking the link in a post.
     * I have tested this by clicking on category links within various posts.
 
+### Validator Testing
+
+## Deployment:
+
+### ElephantSQL:
+
+* Navigate to https://www.elephantsql.com/
+* Click Login/Creat a account.
+* Click "Create New Instance".
+* Create a name for the instance.
+* Select Tiny Turtle.
+* Leave Tags empty and click "Select Region".
+* Select your region.
+* Click Review in the bottom right corner.
+* Click Create instance.
+* Click on your newly created instance.
+* Copy the URL and paste into your project and Heroku
+
+### Heroku:
+
+* Navigate to Heroku and create an account if not already registered.
+* Click the "New" button.
+* Select "Create New App."
+* Provide an app name.
+* Choose a region and click "Create App."
+* Go to the "Settings" tab and click "Reveal Config Vars."
+* Add the following configuration variables:
+    * SECRET_KEY: (Your secret key)
+    * DATABASE_URL: (You should already have this if you created an elephantSQL PostGresdb)
+    * CLOUNDINARY_URL: (Cloudinary API URL)
+    * PORT: 8000
+    * Click the "Deploy" tab.
+* Scroll down to "Connect to GitHub" and sign in/authorize when prompted.
+* In the search box, locate the repository you wish to deploy and click "Connect."
+* Scroll down to "Manual Deploy" and select the main branch.
+* Click "Deploy."
+* The app should now be successfully deployed.
+
+
+## Technolgies Used
+
+* HTML
+* CSS
+* Python
+* Github
+* CodeAnywhere (IDE)
+* Git
+* Font Awesome(Logo)
+* Adobe Express
+* Bootstrap(Navbar & Carosel)
+* Cloudinary (Static File Hosting)
+* Postgres SQL (Database)
+* Elephant SQL (DataBase Hosting) 
+* Heroku (Site Hosting)
+* DbVisualizer
+
+## Dependancies installed
+
+* Django 3.2
+* gunicorn
+* dj_database_url==0.5.0
+* psycopg2
+* dj3-cloudinary-storage
+* urllib3==1.26.15
+* AllAuth
+* django-summernote
+* Crispy Forms
+
+## Credit's
+
+* Buttons - https://uiverse.io/simontheonlyone/loud-husky-59
+* Form input - https://uiverse.io/Yaseen549/stale-frog-25
+* Imgaes For Carosel:
+    * Erik Swison - Instagram
+    * Napking Workshop - Instagram
+    * Nomad Paintworks - Instagram
+* Nemesis Post Image:
+    * Creaking Sheleves Review
