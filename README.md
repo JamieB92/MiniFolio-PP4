@@ -118,5 +118,33 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
     * Yes, the user can cancel the edit process by clicking a cancel link that takes them back to the home page.
     *I have tested this by clicking the cancel link during the edit process and confirming that I am returned to the home page
 
+### Deleting a Post
+
+* Click the "Delete" option on the post.
+    * Yes, the user is able to initiate the deletion process successfully.
+    * I have tested this by clicking the "Delete" option on a post.
+
+* Directed to confirmation page.
+    * Yes, after clicking "Delete," the user is redirected to a confirmation page.
+    * I have tested this by clicking the "Delete" option and observing the subsequent page.
+
+* Click "Submit" on the confirmation page.
+    * Yes, clicking "Submit" on the confirmation page effectively deletes the post.
+    * I have tested this by clicking "Submit" after being directed to the confirmation page.
+
+
+* Returns to the home page.
+    *Yes, after successfully deleting the post, the user is returned to the home page.
+    *I have tested this by deleting a post and checking that I am on the home page afterward.
+
+
+* Check the user's profile for the deleted post.
+    * The deleted post is not present in the user's profile.
+    * I have tested this by verifying the absence of the deleted post in the user's profile.
+
+* Click the "Cancel" link on the confirmation page.
+
+    * Yes, clicking the "Cancel" link on the confirmation page effectively cancels the deletion process and returns the user to the home page.
+    * I have tested this by clicking the "Cancel" link on the confirmation page.
 
 
