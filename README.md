@@ -1,6 +1,8 @@
 # MiniFolio
 
 Welcome to MiniFolio, an online platform that brings together the vibrant worlds of board game miniatures and Warhammer figurines. MiniFolio empowers enthusiasts and artists to proudly showcase their meticulously painted creations, engage with a community, and find inspiration in the artistry of miniature gaming.
+<br>
+Live Site <a href="https://minifolioapp-b0e53ffaa426.herokuapp.com/">MiniFolio</a> 
 
 ## Site-Goals
 
@@ -9,6 +11,7 @@ The primary goal of the site is to empower users to proudly showcase their metic
 It also aims to create a space where artists of all skill levels can display their work and receive recognition for their dedication and creativity.
 
 The site also provides a seamless and intuitive user experience. It is designed to be user-friendly, ensuring that both newcomers and experienced hobbiests can engage with ease.
+
 
 ## Site Epics
 
@@ -276,6 +279,31 @@ Once they have clicked that they will be taken to a confimation page where they 
 Together, these 5 epics contribute to the creation of MiniFolio as an engaging and community-driven platform for miniature enthusiasts, providing a space to display, appreciate, and interact with board game and Warhammer miniatures.
 
 
+### Layout & Design:
+
+Minifolio was built mobile first but is responsive on all devices.
+
+#### Skelton Layouts:
+
+Landing Page : <br> 
+
+![landing page](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/69c8d51f-fa23-46dc-8e86-7a3f1eadcc15)
+
+Home Page : <br>
+
+![blogScroll](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/184d7e6c-20af-4360-a44e-5fe9be224f4a)
+
+
+Login & Register: <br>
+
+![login register](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/cb767e95-adcc-41fa-a1fa-326c706601f7)
+
+
+Profile and Posts: <br>
+
+![profile post](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/3032cb27-893b-4441-82fd-c21ef62aabb2)
+
+
 ## Testing 
 
 ### Creating an Account
@@ -482,7 +510,26 @@ To validate these files, you can follow these steps:
 * Copy the raw HTML code.
 * Paste this code into the validator. This will ensure that only the HTML rendered code is validated. 
 
+I did get two errors that I havent been able to resolve, first one I got the exact same error on the edit-post.html and edit-profile.html. <br>
 
+
+![editpost](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/c810426d-f518-48d5-a7ff-979ad9442063)
+
+I believe the issue is due to passing the post.pk throught the forms action giving me the error.
+Resolution - Would need to pass through the primary key in a different way to clear the error. 
+
+Second Error: <br>
+
+![Upload-Post-Error](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/eed64383-a1c7-4581-b4b5-1f50ed0c03f2)
+
+Means that I can't set a max length because it is a select field which is a dropdown and user can't enter text so the values are populated.
+Resolution - Would need create a choice field in the form and the add each individual category to the model.py.
+Unfortunetly I ran out of time to fix this. 
+
+
+* CI Python Linter:
+  Everyhting has passed but staticstorage and authpassword in settings.py as they were too long but I was unable to find a fix for that.
+  Also in env.py the cloudinary url was too long also which I also couldnt find a fix. 
 
 ## Deployment:
 
@@ -519,6 +566,7 @@ To validate these files, you can follow these steps:
 * Scroll down to "Manual Deploy" and select the main branch.
 * Click "Deploy."
 * The app should now be successfully deployed.
+* <a href="https://minifolioapp-b0e53ffaa426.herokuapp.com/">Live Site</a> 
 
 
 ## Technolgies Used
@@ -560,3 +608,6 @@ To validate these files, you can follow these steps:
     * Nomad Paintworks - Instagram
 * Nemesis Post Image:
     * Creaking Sheleves Review
+* Tutorial
+    * Codemy - Django blog was referenced for categories and liking a post
+    * Code Institute - Blog walk through 
