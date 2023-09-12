@@ -1,8 +1,13 @@
+
+![logo-full](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/c90b600b-032f-4f06-a45d-83f5c9c7b58e)
+
 # MiniFolio
 
 Welcome to MiniFolio, an online platform that brings together the vibrant worlds of board game miniatures and Warhammer figurines. MiniFolio empowers enthusiasts and artists to proudly showcase their meticulously painted creations, engage with a community, and find inspiration in the artistry of miniature gaming.
 <br>
 Live Site <a href="https://minifolioapp-b0e53ffaa426.herokuapp.com/">MiniFolio</a> 
+<br>
+
 
 ## Site-Goals
 
