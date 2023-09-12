@@ -223,6 +223,22 @@ For the user to post a comment they need to click the comment buttong which will
 
 This will then display on the post. 
 
+#### Liking Posts
+
+As a **developer** I want users to be able to  **like, super like and dislike posts** so that **the user can interact with the community**.
+
+**Acceptance Criteria:**
+- Users can click a "like" button on posts.
+-  Users can click a "dislike" button on posts.
+-  User can click a "super like" button on posts
+- The total number of likes should be displayed for each post.
+
+The users are able to Up vote, down vote and super like a post how ever due to issues in development in this sprint we were unable to add a unlike function.
+The like function works and adds to the tally which covers this story but it has been moved to blocker till we are able to implement the un like function. <br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/bb943a9f-d6fe-407b-96fe-8ec3e956e65a)
+
+
 
 
 
