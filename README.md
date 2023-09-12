@@ -30,6 +30,8 @@ As a developer, I need to **set up the project** so that **it is ready for imple
 - Settings.py set with the correct variables and dependencies
 - Soft Deploy to Heroku
 
+This story was for getting setup correct for the implemenation  of Minifolio
+
 #### Database Setup:
 
 As a **developer** I need to **map out and build the database**  so that **the site can store user data and posts**
@@ -40,12 +42,86 @@ As a **developer** I need to **map out and build the database**  so that **the s
 - Build out the basic models in a models.py files.
 
 
-Here is my custom DB for Minifolio:
+Here is my custom DB for Minifolio: 
+
+![minifoliodb](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/1b90d2cc-7e3c-4a4b-9795-aee9752fe485)
+
+This story was for the initial set up of the database ready for implmentaion
+
+
+#### Landing Page
+
+As a **Developer** I need to **create a landing page**  so that **users know they have arrived at the site**
+
+**Acceptance Criteria**
+
+- Create an index.html
+- Style index.html
+- Add a login button
+- Add a register button
+
+This story was for me as a developer to create a landing page so that the users know they have reached MiniFolio.
+The landing page has been built to bring in users to the site: 
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/9a924d72-0ecc-4bf1-b39a-37f84fb800dc)
+
 
 
 **Epic 2: User Registration and Profile Setup**
 
 In the "User Registration and Profile Setup" epic, users are provided with a seamless onboarding experience. They can register using their email and password, creating personalized accounts. This epic also encompasses the development of profile customization features, allowing users to add profile pictures, bios, and specify their interests within the realm of miniature art.
+
+#### Account Creation & Custom User Profile
+
+##### Account creation
+As a **developer** I can **create a user registration form**  so that **so that users can create accounts using their email and password**
+
+**Acceptance Criteria:**
+- Users can input their email and password.
+- Allauth used for signup
+
+##### Custom User Profile
+As a **user** I can **customise my profile** so that it **so it displays my a little bio and all my posts.**
+
+**Acceptance Criteria**
+
+- Create a user profile page and style.
+- The user can upload a profile photo and change the photo
+- The user can create and edit a bio 
+
+
+The storys come hand in hand as when the user registers with us this takes them straight to the create profile page. 
+
+The user starts with signing up where they create a username with a password and if they want to use an email they can. 
+Once this is created they then get taken to the create profile where they can set there bio and profile picture.
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/be3df7bb-bb3b-44d4-872d-3ccc3de56955)
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/f2d3931f-d1df-402a-b6a0-62931a35cb5e)
+
+The user can then click on the profile linke in the nav where this will take them to their personal profile. 
+If the user click edit profile this will load the edit profile form.
+In the profile page as well the user will see all of there posts they a created. 
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/048f3184-7a49-416b-a520-de554316e7ae)
+
+
+#### Login/Logout 
+
+As a **developer** I need to **create a login /Logout button**  so that **when a user comes back to the site they can login and out**
+
+**Acceptance Criteria**
+
+- Create a login/logout button 
+-  Use AllAuth for user authentication
+
+The user is able to login and out via the nav bar or via the landing page Login button.
+The login auithentication used for this was Allauth. 
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/47251497-a6c7-4d09-bd50-5d29bd829a1a)
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/4c7c140b-e8e8-4878-b8aa-36ee3a05811b)
+
 
 ### User Story
 
@@ -67,14 +143,10 @@ The "Editing and Deleting my Miniatures" epic empowers users with control over t
 
 ### User Story
 
-**Epic 6: Responsive Design**
-
-The "Responsive Design" epic focuses on optimizing the MiniFolio website for various devices and screen sizes. This includes implementing responsive design principles to ensure that users can seamlessly access and interact with the platform from desktops, laptops, tablets, and smartphones. A responsive design enhances user experience, making the website accessible and visually appealing across devices.
 
 
 
-
-Together, these six epics contribute to the creation of MiniFolio as an engaging and community-driven platform for miniature enthusiasts, providing a space to display, appreciate, and interact with board game and Warhammer miniatures.
+Together, these 5 epics contribute to the creation of MiniFolio as an engaging and community-driven platform for miniature enthusiasts, providing a space to display, appreciate, and interact with board game and Warhammer miniatures.
 
 
 ## Testing 
