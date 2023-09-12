@@ -260,7 +260,18 @@ The user is able to edit their posts by clicking the edit link in the post, this
 ![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/b0fd0782-3f48-4d1c-9306-286348ff7750)
 
 
+#### Deleting Posts
 
+As a **user** I can **delete my posts**  so that **I can remove my posts if I don't like them any more**
+
+**Acceptance Criteria:**
+- Users can initiate the deletion of a post.
+- Warning pop up before deletion
+
+The user is able to delete their post by click on the delete linke on the post itself.
+Once they have clicked that they will be taken to a confimation page where they will be asked are they sure the want to delete. <br>
+
+![image](https://github.com/JamieB92/MiniFolio-PP4/assets/117354147/22ae8598-cc95-45b6-8ecf-ffdb097ee5e5)
 
 
 Together, these 5 epics contribute to the creation of MiniFolio as an engaging and community-driven platform for miniature enthusiasts, providing a space to display, appreciate, and interact with board game and Warhammer miniatures.
