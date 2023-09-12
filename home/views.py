@@ -109,7 +109,7 @@ class PostComment(View):
                 "comment_form": comment_form,
             },
         )
-# Likes
+# Post Likes
 
 
 def PostSuperLike(request, pk):
@@ -138,9 +138,12 @@ def PostDownVoted(request, pk):
 def CategoryView(request, subject):
 
     post_subjects = userPosts.objects.filter(category=subject)
+    comments = postComments.objects.order_by("-created_on")
 
     return render(request, 'specific-categories.html',
-                  {'subject': subject.title(), 'post_subjects': post_subjects})
+                  {'subject': subject.title(), 
+                  'post_subjects': post_subjects,
+                  'comments': comments})
 
 
 # All Categories

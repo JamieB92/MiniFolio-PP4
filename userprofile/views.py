@@ -13,9 +13,10 @@ class UserProfile(ListView):
     def get(self, request, pk):
         profile = userProfiles.objects.get(user=pk)
         myposts = userPosts.objects.order_by("-posted_on")
+        comments = postComments.objects.order_by("-created_on")
         return render(
             request, 'profile.html',
-            {
+            {   'comments': comments,
                 'profile': profile,
                 'myposts': myposts,
             }
