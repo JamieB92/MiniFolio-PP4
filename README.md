@@ -42,7 +42,6 @@ As a **developer** I need to **map out and build the database**  so that **the s
 
 Here is my custom DB for Minifolio:
 
-<img src="./readme/minifoliodb.png">
 
 **Epic 2: User Registration and Profile Setup**
 
