@@ -91,6 +91,32 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
     * Yes, when the user clicks the "Post" button, the image is posted, and the user is redirected to the home page where they can see the post.
     * I have tested this by posting an image and verifying its presence in the home view.
     * The user can also see the post in a specific category and in their profile.
+ 
+ ### Editing a Post
+
+* Can the user click "Edit" on a post?
+    * Yes, the user is able to click the "Edit" option on a post.
+    * I have tested this by clicking the "Edit" button associated with a post.
+
+* Does clicking "Edit" direct the user to the edit form?
+    * Yes, clicking "Edit" directs the user to the edit form where they can change the image, header, and caption.
+    * I have tested this by clicking "Edit" and verifying that the edit form is displayed.
+
+* Can the user modify the image, header, and caption in the edit form?
+    * Yes, the user is able to change the image, header, and caption in the edit form.
+    * I have tested this by making modifications to each of these elements in the edit form.
+
+* Can the user submit the edited post?
+    * Yes, the user can successfully submit the edited post.
+    * I have tested this by clicking the "Submit" button in the edit form and verifying that the post is updated.
+
+* Does clicking "Submit" take the user back to the home page after post update?
+    * Yes, clicking "Submit" redirects the user to the home page after successfully updating the post.
+    * I have tested this by clicking "Submit" and confirming that I am taken back to the home page.
+
+* Can the user cancel the edit process by clicking a cancel link?
+    * Yes, the user can cancel the edit process by clicking a cancel link that takes them back to the home page.
+    *I have tested this by clicking the cancel link during the edit process and confirming that I am returned to the home page
 
 
 
