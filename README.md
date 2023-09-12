@@ -164,10 +164,6 @@ Together, these six epics contribute to the creation of MiniFolio as an engaging
  
   ### Viewing a User
 
-* Is the user directed to the home page after clicking the Submit button on the profile creation page?
-  * Yes, the user is directed to the home page after clicking the Post Creator's name.
-  * I have tested this by clicking on the creator's name in a post.
-
 * Is the user directed to the Creators profile?
     * Yes, the user is directed to the Post Creator's profile page.
     * I have tested this by clicking on anothers creator's name in a post.
